@@ -21,7 +21,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
  lazy var profileImage: UIImageView = {
 	let view = UIImageView()
 	view.translatesAutoresizingMaskIntoConstraints = false
-	 view.backgroundColor = .systemCyan
+	 view.backgroundColor = .darkGray
 	view.layer.cornerRadius = 25
 	 view.isUserInteractionEnabled = true
 						   
@@ -39,7 +39,8 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
  lazy var nameLabel: UITextField = {
 	let label = UITextField()
 	label.translatesAutoresizingMaskIntoConstraints = false
-	label.text = "sally"
+	label.text = "Hassan"
+	 label.textAlignment = .center
 	return label
 }()
  lazy var usernameStackView: UIStackView = {
@@ -53,19 +54,20 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
  lazy var userStatusLabel: UITextField = {
 	 let label = UITextField()
 	 label.translatesAutoresizingMaskIntoConstraints = false
-	 label.text = "Im happy🙈"
+	 label.text = "Busy"
+	 label.textAlignment = .center
 	 return label
  }()
  lazy var saveButton: UIButton = {
 	 let button = UIButton(type: .system)
-	 button.setTitle("Save Snapcode", for: .normal)
+	 button.setTitle("Save MyProfile", for: .normal)
 	 button.setTitleColor(.white, for: .normal)
 	 button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
 	 button.heightAnchor.constraint(equalToConstant: 50).isActive = true
 	 button.widthAnchor.constraint(equalToConstant: 250).isActive = true
-	 button.layer.cornerRadius = 25
+	 button.layer.cornerRadius = 12
 	 button.layer.masksToBounds = true
-	 button.backgroundColor = .systemGreen
+	 button.backgroundColor = .systemCyan
 	 return button
  }()
  lazy var shareButton: UIButton = {
@@ -75,7 +77,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 	 button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
 	 button.heightAnchor.constraint(equalToConstant: 50).isActive = true
 	 button.widthAnchor.constraint(equalToConstant: 250).isActive = true
-	 button.layer.cornerRadius = 25
+	 button.layer.cornerRadius = 12
 	 button.layer.masksToBounds = true
 	 button.backgroundColor = .systemCyan
 
@@ -133,7 +135,8 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 	 }
  // make cancelButtonTapped works
  @objc private func cancelButtonTapped() {
- present(TabVC(), animated: true, completion: nil)
+// present(TabVC(), animated: true, completion: nil)
+	 self.dismiss(animated: true, completion: nil)
 	 }
  // make imageTapped works
    @objc func imageTapped() {

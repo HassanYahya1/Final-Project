@@ -5,6 +5,31 @@
 //  Created by Hassan Yahya on 01/05/1443 AH.
 //
 
+
+
+import Foundation
+
+import UIKit
+// add struct Location
+struct Location {
+	let id: String
+	let userId: String
+	let location: String
+ 
+}
+
+
+import UIKit
+
+// add struct user
+struct User {
+  let id: String
+  let name: String
+  let status : String
+  let image : String
+  let location : String
+}
+
 import UIKit
 
 struct PharmacyStruct {

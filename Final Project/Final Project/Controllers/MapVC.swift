@@ -33,15 +33,6 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 			mapView.topAnchor.constraint(equalTo: view.topAnchor),
 			mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
 		])
-//		let users: Array <Any> = []
-//		for user in users {
-//			let userPin = MKPointAnnotation()
-//			userPin.title = (user as AnyObject).name
-//			userPin.coordinate = CLLocationCoordinate2D(
-//				latitude: users.lat, longitude: users.long
-//			)
-//			mapView.addAnnotation(userPin)
-//		}
 	}
 }
 
@@ -51,16 +42,4 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
 
 
-
-
-import Foundation
-
-import UIKit
-// add struct Location
-struct Location {
-	let id: String
-	let userId: String
-	let location: String
- 
-}
 
