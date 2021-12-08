@@ -38,7 +38,7 @@ class LogInVC: UIViewController {
 	loginButton.translatesAutoresizingMaskIntoConstraints = false
 	loginButton.setTitle("Log In", for: .normal)
 	loginButton.setTitleColor(.black, for: .normal)
-	loginButton.backgroundColor = .systemGreen
+	loginButton.backgroundColor = .systemTeal
 	loginButton.layer.cornerRadius = 12
 	loginButton.layer.masksToBounds = true
 	loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -66,7 +66,7 @@ class LogInVC: UIViewController {
   }()
   lazy var imageView: UIImageView = {
 	let imageView = UIImageView()
-	imageView.image = UIImage(named: "snap")
+	imageView.image = UIImage(named: "mod")
 	imageView.contentMode = .scaleAspectFill
 	imageView.layer.cornerRadius = 25
 	imageView.translatesAutoresizingMaskIntoConstraints = false

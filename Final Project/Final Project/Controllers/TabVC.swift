@@ -22,10 +22,10 @@ class TabVC: UITabBarController {
 	
 	func setupVCs() {
 		viewControllers = [
-			createNavController(for: Pharmacies(), title: NSLocalizedString("Pharmacies", comment: ""), image: UIImage(systemName: "person.3")!),
-			createNavController(for: CartViewController(), title: NSLocalizedString("Cart", comment: ""), image: UIImage(systemName: "cart.fill.badge.plus")!),
-			createNavController(for:MapVC(), title: NSLocalizedString("Location", comment: ""), image: UIImage(systemName: "location")!),
-			createNavController(for: Profile(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!),
+			createNavController(for: Pharmacies(), title: NSLocalizedString("Pharmacies", comment: ""), image: UIImage(systemName: "text.badge.plus")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
+			createNavController(for: CartViewController(), title: NSLocalizedString("Cart", comment: ""), image: UIImage(systemName: "cart.fill.badge.plus")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
+			createNavController(for:MapVC(), title: NSLocalizedString("Location", comment: ""), image: UIImage(systemName: "location")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
+			createNavController(for: Profile(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person.circle")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1))))
 			
 			
 		]
@@ -35,7 +35,7 @@ class TabVC: UITabBarController {
 		tabBar.backgroundColor = .systemGray4
 		view.backgroundColor = .systemBackground
 		UITabBar.appearance().barTintColor = .systemBackground
-		tabBar.tintColor = .label
+		tabBar.tintColor = .systemBlue
 		setupVCs()
 		
 	}

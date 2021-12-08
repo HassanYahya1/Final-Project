@@ -17,7 +17,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 	lazy var profileImage: UIImageView = {
 	   let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
-		image.backgroundColor = .systemCyan
+		image.backgroundColor = .white
 		image.isUserInteractionEnabled = true
 		image.layer.cornerRadius = 25
 
@@ -81,7 +81,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
 		registerButton.setTitle("Register", for: .normal)
 		registerButton.setTitleColor(.black, for: .normal)
-		registerButton.backgroundColor = .systemCyan
+		registerButton.backgroundColor = .systemTeal
 		registerButton.layer.cornerRadius = 12
 		registerButton.layer.masksToBounds = true
 		registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
@@ -133,7 +133,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		view.addSubview(firstName)
 		NSLayoutConstraint.activate([
 			firstName.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-			firstName.topAnchor.constraint(equalTo: profileImage.topAnchor, constant: 200),
+			firstName.topAnchor.constraint(equalTo: profileImage.topAnchor, constant: 350),
 			firstName.widthAnchor.constraint(equalToConstant: 350),
 			firstName.heightAnchor.constraint(equalToConstant: 40),
 		])
@@ -175,7 +175,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		view.addSubview(labelToRegister)
 			NSLayoutConstraint.activate([
 			  labelToRegister.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35),
-			  labelToRegister.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 40),
+			  labelToRegister.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 20),
 			  labelToRegister.widthAnchor.constraint(equalToConstant: 300),
 			  labelToRegister.heightAnchor.constraint(equalToConstant: 40),
 			])
@@ -183,7 +183,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 			view.addSubview(logInButton)
 			NSLayoutConstraint.activate([
 			  logInButton.rightAnchor.constraint(equalTo: labelToRegister.leftAnchor, constant: 200),
-			  logInButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 40),
+			  logInButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 20),
 			  logInButton.widthAnchor.constraint(equalToConstant: 50),
 			  logInButton.heightAnchor.constraint(equalToConstant: 40),
 			])

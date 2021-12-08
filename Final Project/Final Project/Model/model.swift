@@ -31,6 +31,8 @@ struct User {
 }
 
 import UIKit
+import SwiftUI
+//import Promises
 
 struct PharmacyStruct {
 	
@@ -44,9 +46,10 @@ struct DiscProduct{
 	let nameA: String
 	let staly: String
 	let summaryA: String
+	let price : Double
 }
 
-var data_Pharmacy_str = [
+var pharmaciesData = [
 	
 	PharmacyStruct(
 		image: UIImage(named: "النهدي"),
@@ -59,10 +62,10 @@ var data_Pharmacy_str = [
 			summaryA: """
 - وصف المنتج : وكراي شامبو كيلوال د س للحدّ من الإلتهاب الجلد الدهني 100 مل .
 
-- السعر : ٩٠،٩٩ ر.س
+- السعر : 95 ر.س
 
 
-"""
+""", price: 95
 		),DiscProduct(
 			imageA: UIImage(named: "images"),
 			nameA:". شامبو كليفر ١٠٠مل",
@@ -70,10 +73,10 @@ var data_Pharmacy_str = [
 			summaryA: """
 - وصف المنتج : كليفر شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
 
-- السعر : ٣٠،٩٩ ر.س
+- السعر : 31 ر.س
 
 
-"""
+""", price: 31
 		),DiscProduct(
 			imageA: UIImage(named: "images-10"),
 			nameA:"صبغة شعر لون بني",
@@ -81,10 +84,10 @@ var data_Pharmacy_str = [
 			summaryA: """
 - وصف المنتج : صبغة شعر بني تساعد على لمعان الشعر.
 
-- السعر : ٣٣،٩٩ ر.س
+- السعر : 43 ر.س
 
 
-"""
+""", price: 43
 		),DiscProduct(
 			imageA: UIImage(named: "images-9"),
 			nameA:"صبغة شعر لون اسود",
@@ -92,10 +95,10 @@ var data_Pharmacy_str = [
 			summaryA: """
 - وصف المنتج : صبغة شعر اسود تساعد على لمعان الشعر.
 
-- السعر : ٣٣،٩٩ ر.س
+- السعر : 46 ر.س
 
 
-"""
+""", price: 46
 		),DiscProduct(
 			imageA: UIImage(named: "images-7"),
 			nameA:"بروفين مقاس ٤٠٠",
@@ -103,10 +106,10 @@ var data_Pharmacy_str = [
 			summaryA: """
 - وصف المنتج : حبوب بروفين مسكن للالام .
 
-- السعر : ١٠،٩٩ ر.س
+- السعر : 10.50 ر.س
 
 
-"""
+""", price: 10
 		),
 			
 			DiscProduct(
@@ -116,9 +119,9 @@ var data_Pharmacy_str = [
 				summaryA: """
 وصف المنتج : ريفوليوشن صبغة الشعر المؤقته اللون اللون الارجوانى 90 مل .
 
-السعر : ٤١ ر.س
+السعر : 41 ر.س
 
-"""
+""", price: 41
 			)]
 	),
 	//==========================================================================
@@ -134,8 +137,8 @@ var data_Pharmacy_str = [
 			summaryA: """
 وصف المنتج : علاج الالم و تسكينه اعتمادا على الباراسيتامول .
 
-السعر : ٨ ر.س
-"""
+السعر : 7 ر.س
+""", price: 7
 		),DiscProduct(
 			imageA: UIImage(named: "images-8"),
 			nameA: "صبغة ويلموكسون",
@@ -143,8 +146,8 @@ var data_Pharmacy_str = [
 			summaryA: """
 وصف المنتج : صبغة سوداء تساعد على لمعان الشعر .
 
-السعر :٢١ ر.س
-"""
+السعر :21 ر.س
+""", price: 21
 		),DiscProduct(
 			imageA: UIImage(named: "images-6"),
 			nameA: "استشوار شعر",
@@ -152,8 +155,8 @@ var data_Pharmacy_str = [
 			summaryA: """
 وصف المنتج : استشوار شعر يساعد علئ تصفيف و ترتيب الشعر .
 
-السعر : ٦٥ ر.س
-"""
+السعر : 65 ر.س
+""", price: 65
 		),DiscProduct(
 			imageA: UIImage(named: "images-2"),
 			nameA: "مرطب ايدي كاتفيل",
@@ -161,8 +164,8 @@ var data_Pharmacy_str = [
 			summaryA: """
 وصف المنتج : مرهم يعمل على ترطيب اليدين ويجعلها اكثر نعومه .
 
-السعر : ١٩ ر.س
-"""
+السعر : 19 ر.س
+""", price: 19
 		),
 			DiscProduct(
 				imageA: UIImage(named: "shopping-2"),
@@ -171,9 +174,9 @@ var data_Pharmacy_str = [
 				summaryA: """
 وصف المنتج : ريفوليوشن صبغة الشعر المؤقته اللون اللون الارجوانى 90 مل .
 
-السعر : ٤١ ر.س
+السعر : 41 ر.س
 
-"""
+""", price: 41
 			),DiscProduct(
 				imageA: UIImage(named: "images"),
 				nameA:". شامبو كليفر ١٠٠مل",
@@ -181,10 +184,10 @@ var data_Pharmacy_str = [
 				summaryA: """
  - وصف المنتج : كليفر شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
  
- - السعر : ٣٠،٩٩ ر.س
+ - السعر : 30.99 ر.س
  
  
- """
+ """, price: 30.99
 			),DiscProduct(
 				imageA: UIImage(named: "images-4"),
 				nameA: "مرهم نيفيا",
@@ -192,8 +195,8 @@ var data_Pharmacy_str = [
 				summaryA: """
 وصف المنتج : يعالج تشققات اليدين و يساعد على ترطيبها .
 
-السعر : ١٤ ر.س
-"""
+السعر : 14 ر.س
+""", price: 14
 			),DiscProduct(
 				imageA: UIImage(named: "images-5"),
 				nameA: "استشوار ذكي لاسلكي",
@@ -201,8 +204,8 @@ var data_Pharmacy_str = [
 				summaryA: """
 وصف المنتج : استشوار الماني ذو الثلاث رؤوس متغيره يساعد الشعر المتجعد .
 
-السعر : ٨١ ر.س
-"""
+السعر : 81 ر.س
+""", price: 81
 			)
 		   ]
 	),
@@ -220,8 +223,8 @@ var data_Pharmacy_str = [
 			summaryA: """
  وصف المنتج : استشوار الماني ذو الثلاث رؤوس متغيره يساعد الشعر المتجعد .
  
- السعر : ٨١ ر.س
- """
+ السعر : 81 ر.س
+ """, price: 81
 		),DiscProduct(
 			imageA: UIImage(named: "بندول١"),
 			nameA: "بندول الازرق ٥٠٠ مل .",
@@ -229,8 +232,8 @@ var data_Pharmacy_str = [
 			summaryA: """
 وصف المنتج : علاج الالم و تسكينه اعتمادا على الباراسيتامول .
 
-السعر : ٨ ر.س
-"""
+السعر : 8 ر.س
+""", price: 8
 		),
 			DiscProduct(
 				imageA: UIImage(named: "shopping"),
@@ -239,10 +242,10 @@ var data_Pharmacy_str = [
 				summaryA: """
  - وصف المنتج : وكراي شامبو كيلوال د س للحدّ من الإلتهاب الجلد الدهني 100 مل .
  
- - السعر : ٩٠،٩٩ ر.س
+ - السعر : 87 ر.س
  
  
- """
+ """, price: 87
 			),
 			DiscProduct(
 				imageA: UIImage(named: "images-10"),
@@ -251,10 +254,10 @@ var data_Pharmacy_str = [
 				summaryA: """
   - وصف المنتج : صبغة شعر بني تساعد على لمعان الشعر.
   
-  - السعر : ٣٣،٩٩ ر.س
+  - السعر : 33.90 ر.س
   
   
-  """
+  """, price: 33.90
 			),
 			DiscProduct(
 				imageA: UIImage(named: "images-7"),
@@ -263,10 +266,10 @@ var data_Pharmacy_str = [
 				summaryA: """
    - وصف المنتج : حبوب بروفين مسكن للالام .
    
-   - السعر : ١٠،٩٩ ر.س
+   - السعر : 10.90 ر.س
    
    
-   """
+   """, price: 10.90
 			),
 			DiscProduct(
 				imageA: UIImage(named: "images-8"),
@@ -275,8 +278,8 @@ var data_Pharmacy_str = [
 				summaryA: """
  وصف المنتج : صبغة سوداء تساعد على لمعان الشعر .
  
- السعر :٢١ ر.س
- """
+ السعر : 21 ر.س
+ """, price: 21
 			)
 		   ]
 	),
@@ -293,8 +296,8 @@ var data_Pharmacy_str = [
 			summaryA: """
  وصف المنتج : علاج الكحه للبالغين و مهدىء فعال للالام الصدرية.
  
- السعر : ٨ ر.س
- """
+ السعر : 8 ر.س
+ """, price: 8
 		),DiscProduct(
 			imageA: UIImage(named: "images-11"),
 			nameA: "امواس حلاقه نسائيه ",
@@ -302,8 +305,8 @@ var data_Pharmacy_str = [
 			summaryA: """
  وصف المنتج : امواس حلاقه للنساء ذات شفرات حاده .
  
- السعر: ١٧ ر.س
- """
+ السعر: 17 ر.س
+ """, price: 17
 		),DiscProduct(
 			imageA: UIImage(named: "images-13"),
 			nameA: "علاج الكحه بروسبين ",
@@ -311,8 +314,8 @@ var data_Pharmacy_str = [
 			summaryA: """
  وصف المنتج : علاج لالم الكحه و البلغم والجفاف الصدري .
  
- السعر : ٢٨ ر.س
- """
+ السعر : 28 ر.س
+ """, price: 28
 		),DiscProduct(
 			imageA: UIImage(named: "images-10"),
 			nameA:"صبغة شعر لون بني",
@@ -320,10 +323,10 @@ var data_Pharmacy_str = [
 			summaryA: """
  - وصف المنتج : صبغة شعر بني تساعد على لمعان الشعر.
  
- - السعر : ٣٣،٩٩ ر.س
+ - السعر : 33 ر.س
  
  
- """
+ """, price: 33
 		),DiscProduct(
 			imageA: UIImage(named: "images-4"),
 			nameA: "مرهم نيفيا",
@@ -331,8 +334,8 @@ var data_Pharmacy_str = [
 			summaryA: """
 وصف المنتج : يعالج تشققات اليدين و يساعد على ترطيبها .
 
-السعر : ١٤ ر.س
-"""
+السعر : 14 ر.س
+""", price: 14
 		),DiscProduct(
 			imageA: UIImage(named: "بندول١"),
 			nameA: "بندول الازرق ٥٠٠ مل .",
@@ -340,8 +343,8 @@ var data_Pharmacy_str = [
 			summaryA: """
  وصف المنتج : علاج الالم و تسكينه اعتمادا على الباراسيتامول .
  
- السعر : ٨ ر.س
- """
+ السعر : 8 ر.س
+ """, price: 8
 		),DiscProduct(
 			imageA: UIImage(named: "images-5"),
 			nameA: "استشوار ذكي لاسلكي",
@@ -349,20 +352,20 @@ var data_Pharmacy_str = [
 			summaryA: """
  وصف المنتج : استشوار الماني ذو الثلاث رؤوس متغيره يساعد الشعر المتجعد .
  
- السعر : ٨١ ر.س
- """
+ السعر : 71 ر.س
+ """, price: 71
 		),
 			DiscProduct(
 				imageA: UIImage(named: "images"),
 				nameA:". شامبو كليفر ١٠٠مل",
 				staly: "",
 				summaryA: """
-	- وصف المنتج : كليفر شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
+   -وصف المنتج : كليفر شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
+ 
+ - السعر : 32 ر.س
 
-	- السعر : ٣٠،٩٩ ر.س
 
-
-	"""
+ """, price: 32
 			)
 		   ]
 	),

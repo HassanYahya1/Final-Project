@@ -85,7 +85,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
  }()
  lazy var cancelButton: UIButton = {
 	 let button = UIButton(type: .system)
-	 button.setTitle("Cancel", for: .normal)
+	 button.setTitle("Sing Out", for: .normal)
 	 button.setTitleColor(.black, for: .normal)
 	 button.titleLabel?.font = UIFont.preferredFont (forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
 	 button.heightAnchor.constraint(equalToConstant: 50).isActive = true

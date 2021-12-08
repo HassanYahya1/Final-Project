@@ -111,7 +111,7 @@ class ProductDiscrebtion : UIViewController{
 	}
 	@objc func popupAlert(sender: UIButton!){
 		
-		let alert = UIAlertController(title: "هل تريد تقديم طلب على هذه الخدمه؟",
+		let alert = UIAlertController(title: "هل تريد وضع هذا المنتج في العربه؟",
 									  message: "",
 									  preferredStyle: .alert)
 		

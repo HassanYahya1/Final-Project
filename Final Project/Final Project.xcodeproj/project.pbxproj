@@ -17,7 +17,6 @@
 		5EC1886B275C9750003BCE37 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1886A275C9750003BCE37 /* ProfileVC.swift */; };
 		5EC1886D275C975D003BCE37 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1886C275C975D003BCE37 /* CartVC.swift */; };
 		5EC18871275CAE2F003BCE37 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC18870275CAE2F003BCE37 /* model.swift */; };
-		5EC18885275CC7A1003BCE37 /* Pharmacies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC18884275CC7A1003BCE37 /* Pharmacies.swift */; };
 		5EC18888275F4F17003BCE37 /* PharmeciesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC18887275F4F17003BCE37 /* PharmeciesVC.swift */; };
 		5EC1888A275F4F73003BCE37 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC18889275F4F73003BCE37 /* ProductsVC.swift */; };
 		5EC1888C275F4FE6003BCE37 /* ProductDiscrebtionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1888B275F4FE6003BCE37 /* ProductDiscrebtionVC.swift */; };
@@ -30,10 +29,11 @@
 		5EC1889F275F7916003BCE37 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5EC1889E275F7916003BCE37 /* FirebaseMessaging */; };
 		5EC188A1275F7916003BCE37 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 5EC188A0275F7916003BCE37 /* FirebasePerformance */; };
 		5EC188A3275F7916003BCE37 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5EC188A2275F7916003BCE37 /* FirebaseStorage */; };
-		5EC188A5275F7B93003BCE37 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188A4275F7B93003BCE37 /* LoginScreen.swift */; };
+		5EC188A5275F7B93003BCE37 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188A4275F7B93003BCE37 /* RegisterScreen.swift */; };
 		5EC188A7275F7C10003BCE37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EC188A6275F7C10003BCE37 /* GoogleService-Info.plist */; };
-		5EC188AB275F82A5003BCE37 /* WellcomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188AA275F82A5003BCE37 /* WellcomScreen.swift */; };
-		5EC188AD275F82CE003BCE37 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188AC275F82CE003BCE37 /* SignUpScreen.swift */; };
+		5EC188AB275F82A5003BCE37 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188AA275F82A5003BCE37 /* LoginScreen.swift */; };
+		5EC188AD275F82CE003BCE37 /* R and LScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188AC275F82CE003BCE37 /* R and LScreen.swift */; };
+		5EC188B02760CF44003BCE37 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EC188B22760CF44003BCE37 /* localization.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,16 +49,18 @@
 		5EC1886A275C9750003BCE37 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		5EC1886C275C975D003BCE37 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		5EC18870275CAE2F003BCE37 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
-		5EC18884275CC7A1003BCE37 /* Pharmacies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacies.swift; sourceTree = "<group>"; };
 		5EC18887275F4F17003BCE37 /* PharmeciesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmeciesVC.swift; sourceTree = "<group>"; };
 		5EC18889275F4F73003BCE37 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		5EC1888B275F4FE6003BCE37 /* ProductDiscrebtionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDiscrebtionVC.swift; sourceTree = "<group>"; };
 		5EC18891275F50B2003BCE37 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		5EC18893275F50C8003BCE37 /* PharmacyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyCell.swift; sourceTree = "<group>"; };
-		5EC188A4275F7B93003BCE37 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		5EC188A4275F7B93003BCE37 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		5EC188A6275F7C10003BCE37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5EC188AA275F82A5003BCE37 /* WellcomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomScreen.swift; sourceTree = "<group>"; };
-		5EC188AC275F82CE003BCE37 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		5EC188AA275F82A5003BCE37 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		5EC188AC275F82CE003BCE37 /* R and LScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R and LScreen.swift"; sourceTree = "<group>"; };
+		5EC188B12760CF44003BCE37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
+		5EC188B32760CF62003BCE37 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5EC188B42760CF62003BCE37 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/localization.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				5EC18852275C94D8003BCE37 /* AppDelegate.swift */,
 				5EC18854275C94D8003BCE37 /* SceneDelegate.swift */,
 				5EC188A6275F7C10003BCE37 /* GoogleService-Info.plist */,
+				5EC188B22760CF44003BCE37 /* localization.strings */,
 				5EC18877275CAFFD003BCE37 /* Model */,
 				5EC18890275F5097003BCE37 /* Views */,
 				5EC18886275F4ED7003BCE37 /* Controllers */,
@@ -130,8 +133,7 @@
 				5EC1888B275F4FE6003BCE37 /* ProductDiscrebtionVC.swift */,
 				5EC18889275F4F73003BCE37 /* ProductsVC.swift */,
 				5EC1886A275C9750003BCE37 /* ProfileVC.swift */,
-				5EC18884275CC7A1003BCE37 /* Pharmacies.swift */,
-				5EC188A9275F8279003BCE37 /* New Group */,
+				5EC188A9275F8279003BCE37 /* FirstPage */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,14 +147,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5EC188A9275F8279003BCE37 /* New Group */ = {
+		5EC188A9275F8279003BCE37 /* FirstPage */ = {
 			isa = PBXGroup;
 			children = (
-				5EC188AA275F82A5003BCE37 /* WellcomScreen.swift */,
-				5EC188AC275F82CE003BCE37 /* SignUpScreen.swift */,
-				5EC188A4275F7B93003BCE37 /* LoginScreen.swift */,
+				5EC188AA275F82A5003BCE37 /* LoginScreen.swift */,
+				5EC188AC275F82CE003BCE37 /* R and LScreen.swift */,
+				5EC188A4275F7B93003BCE37 /* RegisterScreen.swift */,
 			);
-			path = "New Group";
+			path = FirstPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +208,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 5EC18846275C94D8003BCE37;
 			packageReferences = (
@@ -227,6 +230,7 @@
 			files = (
 				5EC1885F275C94D9003BCE37 /* LaunchScreen.storyboard in Resources */,
 				5EC1885C275C94D9003BCE37 /* Assets.xcassets in Resources */,
+				5EC188B02760CF44003BCE37 /* localization.strings in Resources */,
 				5EC1885A275C94D8003BCE37 /* Main.storyboard in Resources */,
 				5EC188A7275F7C10003BCE37 /* GoogleService-Info.plist in Resources */,
 			);
@@ -241,14 +245,13 @@
 			files = (
 				5EC18894275F50C8003BCE37 /* PharmacyCell.swift in Sources */,
 				5EC1888A275F4F73003BCE37 /* ProductsVC.swift in Sources */,
-				5EC188A5275F7B93003BCE37 /* LoginScreen.swift in Sources */,
-				5EC188AD275F82CE003BCE37 /* SignUpScreen.swift in Sources */,
-				5EC18885275CC7A1003BCE37 /* Pharmacies.swift in Sources */,
+				5EC188A5275F7B93003BCE37 /* RegisterScreen.swift in Sources */,
+				5EC188AD275F82CE003BCE37 /* R and LScreen.swift in Sources */,
 				5EC1886B275C9750003BCE37 /* ProfileVC.swift in Sources */,
 				5EC18869275C9720003BCE37 /* MapVC.swift in Sources */,
 				5EC1886D275C975D003BCE37 /* CartVC.swift in Sources */,
 				5EC1888C275F4FE6003BCE37 /* ProductDiscrebtionVC.swift in Sources */,
-				5EC188AB275F82A5003BCE37 /* WellcomScreen.swift in Sources */,
+				5EC188AB275F82A5003BCE37 /* LoginScreen.swift in Sources */,
 				5EC18857275C94D8003BCE37 /* TabVC.swift in Sources */,
 				5EC18853275C94D8003BCE37 /* AppDelegate.swift in Sources */,
 				5EC18871275CAE2F003BCE37 /* model.swift in Sources */,
@@ -273,8 +276,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				5EC1885E275C94D9003BCE37 /* Base */,
+				5EC188B32760CF62003BCE37 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5EC188B22760CF44003BCE37 /* localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EC188B12760CF44003BCE37 /* en */,
+				5EC188B42760CF62003BCE37 /* ar */,
+			);
+			name = localization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -284,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -345,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

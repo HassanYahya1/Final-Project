@@ -54,6 +54,7 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		
 		cell.imageCell.image = list.imageA
 		cell.nameCell.text = list.nameA
+		cell.priceLbl.text = "\(list.price)"
 		
 		return cell
 	}

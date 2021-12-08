@@ -27,23 +27,24 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		cell.nameCell.text = pro.nameA
 		cell.imageCell.image = pro.imageA
 		cell.stalyCell.text = pro.staly
+		cell.priceLbl.text = "\(pro.price)"
 		return cell
 	}
 	var filteredData: [DiscProduct] = []
 	var isFilter = true
 	
 	var products: [DiscProduct] = []
-	
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let vc = ProductDiscrebtion()
-		
-		
-		vc.ProductFromVC2 = cart[indexPath.row]
-		
-		
-		self.navigationController?.pushViewController(vc, animated: true)
-		
-	}
+//
+//	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//		let vc = ProductDiscrebtion()
+//
+//
+//		vc.ProductFromVC2 = cart[indexPath.row]
+//
+//
+//		self.navigationController?.pushViewController(vc, animated: true)
+//
+//	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)

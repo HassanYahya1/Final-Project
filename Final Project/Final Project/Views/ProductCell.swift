@@ -14,6 +14,7 @@ class ProductCell: UITableViewCell {
 	let imageCell = UIImageView()
 	let nameCell = UILabel()
 	let stalyCell = UILabel()
+	let priceLbl = UILabel()
 	
 	//==========================================================================
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
@@ -70,6 +71,15 @@ class ProductCell: UITableViewCell {
 			//      nameCell.topAnchor.constraint(equalTo: topAnchor, constant: 20),
 			nameCell.centerYAnchor.constraint(equalTo: centerYAnchor),
 			nameCell.heightAnchor.constraint(equalToConstant: 45)
+		])
+		
+		self.addSubview(priceLbl)
+		priceLbl.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			priceLbl.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+			priceLbl.centerXAnchor.constraint(equalTo: centerXAnchor),
+			priceLbl.topAnchor.constraint(equalTo: topAnchor, constant: 25)
+		
 		])
 	}
 	//==========================================================================
