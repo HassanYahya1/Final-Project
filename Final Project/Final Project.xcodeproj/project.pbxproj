@@ -34,6 +34,8 @@
 		5EC188AB275F82A5003BCE37 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188AA275F82A5003BCE37 /* LoginScreen.swift */; };
 		5EC188AD275F82CE003BCE37 /* R and LScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188AC275F82CE003BCE37 /* R and LScreen.swift */; };
 		5EC188B02760CF44003BCE37 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EC188B22760CF44003BCE37 /* localization.strings */; };
+		5EC188B62761F417003BCE37 /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188B52761F417003BCE37 /* CheckOutVC.swift */; };
+		5EC188B827621760003BCE37 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188B727621760003BCE37 /* CartService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		5EC188B12760CF44003BCE37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
 		5EC188B32760CF62003BCE37 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5EC188B42760CF62003BCE37 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/localization.strings; sourceTree = "<group>"; };
+		5EC188B52761F417003BCE37 /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
+		5EC188B727621760003BCE37 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,9 @@
 				5EC18856275C94D8003BCE37 /* TabVC.swift */,
 				5EC18887275F4F17003BCE37 /* PharmeciesVC.swift */,
 				5EC18868275C9720003BCE37 /* MapVC.swift */,
+				5EC188B52761F417003BCE37 /* CheckOutVC.swift */,
 				5EC1886C275C975D003BCE37 /* CartVC.swift */,
+				5EC188B727621760003BCE37 /* CartService.swift */,
 				5EC1888B275F4FE6003BCE37 /* ProductDiscrebtionVC.swift */,
 				5EC18889275F4F73003BCE37 /* ProductsVC.swift */,
 				5EC1886A275C9750003BCE37 /* ProfileVC.swift */,
@@ -250,9 +256,11 @@
 				5EC1886B275C9750003BCE37 /* ProfileVC.swift in Sources */,
 				5EC18869275C9720003BCE37 /* MapVC.swift in Sources */,
 				5EC1886D275C975D003BCE37 /* CartVC.swift in Sources */,
+				5EC188B827621760003BCE37 /* CartService.swift in Sources */,
 				5EC1888C275F4FE6003BCE37 /* ProductDiscrebtionVC.swift in Sources */,
 				5EC188AB275F82A5003BCE37 /* LoginScreen.swift in Sources */,
 				5EC18857275C94D8003BCE37 /* TabVC.swift in Sources */,
+				5EC188B62761F417003BCE37 /* CheckOutVC.swift in Sources */,
 				5EC18853275C94D8003BCE37 /* AppDelegate.swift in Sources */,
 				5EC18871275CAE2F003BCE37 /* model.swift in Sources */,
 				5EC18892275F50B2003BCE37 /* ProductCell.swift in Sources */,

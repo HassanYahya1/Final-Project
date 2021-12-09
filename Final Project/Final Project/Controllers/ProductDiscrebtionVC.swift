@@ -116,8 +116,7 @@ class ProductDiscrebtion : UIViewController{
 									  preferredStyle: .alert)
 		
 		alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { action in
-			cart.append(self.ProductFromVC2!)
-			
+			CartService.shared.addStudent(student: self.ProductFromVC2!)
 		}))
 		alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { action in
 			print("Do not apply")}))

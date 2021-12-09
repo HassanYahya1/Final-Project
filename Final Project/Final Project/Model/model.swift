@@ -20,7 +20,12 @@ struct Location {
 
 
 import UIKit
+struct Carts {
+	let id: String
+	let name: String
+	let image : String
 
+}
 // add struct user
 struct User {
   let id: String
@@ -42,6 +47,7 @@ struct PharmacyStruct {
 }
 
 struct DiscProduct{
+	let id: String
 	let imageA: UIImage?
 	let nameA: String
 	let staly: String
@@ -56,6 +62,7 @@ var pharmaciesData = [
 		name: "صيدلية النهدي",
 		
 		discProduct: [DiscProduct(
+			id: UUID().uuidString,
 			imageA: UIImage(named: "shopping"),
 			nameA:". شامبو دوكراى ١٠٠ مل",
 			staly: "",
@@ -67,6 +74,7 @@ var pharmaciesData = [
 
 """, price: 95
 		),DiscProduct(
+			id: UUID().uuidString,
 			imageA: UIImage(named: "images"),
 			nameA:". شامبو كليفر ١٠٠مل",
 			staly: "",
@@ -78,7 +86,7 @@ var pharmaciesData = [
 
 """, price: 31
 		),DiscProduct(
-			imageA: UIImage(named: "images-10"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-10"),
 			nameA:"صبغة شعر لون بني",
 			staly: "",
 			summaryA: """
@@ -89,7 +97,7 @@ var pharmaciesData = [
 
 """, price: 43
 		),DiscProduct(
-			imageA: UIImage(named: "images-9"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-9"),
 			nameA:"صبغة شعر لون اسود",
 			staly: "",
 			summaryA: """
@@ -100,7 +108,7 @@ var pharmaciesData = [
 
 """, price: 46
 		),DiscProduct(
-			imageA: UIImage(named: "images-7"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-7"),
 			nameA:"بروفين مقاس ٤٠٠",
 			staly: "",
 			summaryA: """
@@ -113,7 +121,7 @@ var pharmaciesData = [
 		),
 			
 			DiscProduct(
-				imageA: UIImage(named: "shopping-2"),
+				id: UUID().uuidString, imageA: UIImage(named: "shopping-2"),
 				nameA: " صبغة ريفوليوشن",
 				staly: "",
 				summaryA: """
@@ -131,7 +139,7 @@ var pharmaciesData = [
 		name: "صيدلية الدواء",
 		
 		discProduct: [DiscProduct(
-			imageA: UIImage(named: "بندول١"),
+			id: UUID().uuidString, imageA: UIImage(named: "بندول١"),
 			nameA: "بندول الازرق ٥٠٠ مل .",
 			staly: "",
 			summaryA: """
@@ -140,7 +148,7 @@ var pharmaciesData = [
 السعر : 7 ر.س
 """, price: 7
 		),DiscProduct(
-			imageA: UIImage(named: "images-8"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-8"),
 			nameA: "صبغة ويلموكسون",
 			staly: "",
 			summaryA: """
@@ -149,7 +157,7 @@ var pharmaciesData = [
 السعر :21 ر.س
 """, price: 21
 		),DiscProduct(
-			imageA: UIImage(named: "images-6"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-6"),
 			nameA: "استشوار شعر",
 			staly: "",
 			summaryA: """
@@ -158,7 +166,7 @@ var pharmaciesData = [
 السعر : 65 ر.س
 """, price: 65
 		),DiscProduct(
-			imageA: UIImage(named: "images-2"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-2"),
 			nameA: "مرطب ايدي كاتفيل",
 			staly: "",
 			summaryA: """
@@ -168,7 +176,7 @@ var pharmaciesData = [
 """, price: 19
 		),
 			DiscProduct(
-				imageA: UIImage(named: "shopping-2"),
+				id: UUID().uuidString, imageA: UIImage(named: "shopping-2"),
 				nameA: " صبغة ريفوليوشن",
 				staly: "",
 				summaryA: """
@@ -178,7 +186,7 @@ var pharmaciesData = [
 
 """, price: 41
 			),DiscProduct(
-				imageA: UIImage(named: "images"),
+				id: UUID().uuidString, imageA: UIImage(named: "images"),
 				nameA:". شامبو كليفر ١٠٠مل",
 				staly: "",
 				summaryA: """
@@ -189,7 +197,7 @@ var pharmaciesData = [
  
  """, price: 30.99
 			),DiscProduct(
-				imageA: UIImage(named: "images-4"),
+				id: UUID().uuidString, imageA: UIImage(named: "images-4"),
 				nameA: "مرهم نيفيا",
 				staly: "",
 				summaryA: """
@@ -198,7 +206,7 @@ var pharmaciesData = [
 السعر : 14 ر.س
 """, price: 14
 			),DiscProduct(
-				imageA: UIImage(named: "images-5"),
+				id: UUID().uuidString, imageA: UIImage(named: "images-5"),
 				nameA: "استشوار ذكي لاسلكي",
 				staly: "",
 				summaryA: """
@@ -217,7 +225,7 @@ var pharmaciesData = [
 		name: "صيدلية وايتس",
 		
 		discProduct: [DiscProduct(
-			imageA: UIImage(named: "images-5"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-5"),
 			nameA: "استشوار ذكي لاسلكي",
 			staly: "",
 			summaryA: """
@@ -226,7 +234,7 @@ var pharmaciesData = [
  السعر : 81 ر.س
  """, price: 81
 		),DiscProduct(
-			imageA: UIImage(named: "بندول١"),
+			id: UUID().uuidString, imageA: UIImage(named: "بندول١"),
 			nameA: "بندول الازرق ٥٠٠ مل .",
 			staly: "",
 			summaryA: """
@@ -236,7 +244,7 @@ var pharmaciesData = [
 """, price: 8
 		),
 			DiscProduct(
-				imageA: UIImage(named: "shopping"),
+				id: UUID().uuidString, imageA: UIImage(named: "shopping"),
 				nameA:". شامبو دوكراى ١٠٠ مل",
 				staly: "",
 				summaryA: """
@@ -248,7 +256,7 @@ var pharmaciesData = [
  """, price: 87
 			),
 			DiscProduct(
-				imageA: UIImage(named: "images-10"),
+				id: UUID().uuidString, imageA: UIImage(named: "images-10"),
 				nameA:"صبغة شعر لون بني",
 				staly: "",
 				summaryA: """
@@ -260,7 +268,7 @@ var pharmaciesData = [
   """, price: 33.90
 			),
 			DiscProduct(
-				imageA: UIImage(named: "images-7"),
+				id: UUID().uuidString, imageA: UIImage(named: "images-7"),
 				nameA:"بروفين مقاس ٤٠٠",
 				staly: "",
 				summaryA: """
@@ -272,7 +280,7 @@ var pharmaciesData = [
    """, price: 10.90
 			),
 			DiscProduct(
-				imageA: UIImage(named: "images-8"),
+				id: UUID().uuidString, imageA: UIImage(named: "images-8"),
 				nameA: "صبغة ويلموكسون",
 				staly: "",
 				summaryA: """
@@ -290,7 +298,7 @@ var pharmaciesData = [
 		name: "صيدلية بوتز",
 		
 		discProduct: [DiscProduct(
-			imageA: UIImage(named: "كحه"),
+			id: UUID().uuidString, imageA: UIImage(named: "كحه"),
 			nameA: "علاج الكحه نوتوسيل",
 			staly: "",
 			summaryA: """
@@ -299,7 +307,7 @@ var pharmaciesData = [
  السعر : 8 ر.س
  """, price: 8
 		),DiscProduct(
-			imageA: UIImage(named: "images-11"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-11"),
 			nameA: "امواس حلاقه نسائيه ",
 			staly: "",
 			summaryA: """
@@ -308,7 +316,7 @@ var pharmaciesData = [
  السعر: 17 ر.س
  """, price: 17
 		),DiscProduct(
-			imageA: UIImage(named: "images-13"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-13"),
 			nameA: "علاج الكحه بروسبين ",
 			staly: "",
 			summaryA: """
@@ -317,7 +325,7 @@ var pharmaciesData = [
  السعر : 28 ر.س
  """, price: 28
 		),DiscProduct(
-			imageA: UIImage(named: "images-10"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-10"),
 			nameA:"صبغة شعر لون بني",
 			staly: "",
 			summaryA: """
@@ -328,7 +336,7 @@ var pharmaciesData = [
  
  """, price: 33
 		),DiscProduct(
-			imageA: UIImage(named: "images-4"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-4"),
 			nameA: "مرهم نيفيا",
 			staly: "",
 			summaryA: """
@@ -337,7 +345,7 @@ var pharmaciesData = [
 السعر : 14 ر.س
 """, price: 14
 		),DiscProduct(
-			imageA: UIImage(named: "بندول١"),
+			id: UUID().uuidString, imageA: UIImage(named: "بندول١"),
 			nameA: "بندول الازرق ٥٠٠ مل .",
 			staly: "",
 			summaryA: """
@@ -346,7 +354,7 @@ var pharmaciesData = [
  السعر : 8 ر.س
  """, price: 8
 		),DiscProduct(
-			imageA: UIImage(named: "images-5"),
+			id: UUID().uuidString, imageA: UIImage(named: "images-5"),
 			nameA: "استشوار ذكي لاسلكي",
 			staly: "",
 			summaryA: """
@@ -356,7 +364,7 @@ var pharmaciesData = [
  """, price: 71
 		),
 			DiscProduct(
-				imageA: UIImage(named: "images"),
+				id: UUID().uuidString, imageA: UIImage(named: "images"),
 				nameA:". شامبو كليفر ١٠٠مل",
 				staly: "",
 				summaryA: """

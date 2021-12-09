@@ -9,9 +9,22 @@ import UIKit
 var cart : Array <DiscProduct> = []
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 	
+	
 	let imageCell = UIImageView()
 	var tv = UITableView()
-	
+	lazy var btn: UIButton = {
+	  let btn = UIButton()
+	  btn.translatesAutoresizingMaskIntoConstraints = false
+	  btn.setTitle("End Your Shopping ✔︎", for: .normal)
+	  btn.setTitleColor(.black, for: .normal)
+	  btn.backgroundColor = .systemTeal
+	  btn.layer.cornerRadius = 12
+	  btn.layer.masksToBounds = true
+	  btn.addTarget(self, action: #selector(payiny), for: .touchUpInside)
+	  btn.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+	  return btn
+	}()
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return cart.count
 	}
@@ -49,6 +62,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.tv.reloadData()
+		
 		// 		print(data_Court_str.count)
 	}
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -59,6 +73,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		CartService.shared.listenToStudents {  cartFromFS in
+			cart = cartFromFS
+			self.tv.reloadData()
+		}
+		view.backgroundColor = .white
 		tv.delegate = self
 		tv.dataSource = self
 		tv.rowHeight = 80
@@ -69,11 +89,24 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		NSLayoutConstraint.activate([
 			tv.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-			tv.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+			tv.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -90),
 			tv.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
 			tv.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
 			
 		])
+			view.addSubview(btn)
+		btn.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			btn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+			btn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 700)
 		
+		])
+		
+	}
+	
+	@objc func payiny() {
+		let checkOut = CheckOut()
+		present(checkOut, animated: true, completion: nil)
 	}
 }
