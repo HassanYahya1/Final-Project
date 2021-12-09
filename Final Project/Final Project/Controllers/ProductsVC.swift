@@ -52,7 +52,7 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		let list = productFromVC!.discProduct[indexPath.row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
 		
-		cell.imageCell.image = list.imageA
+		cell.imageCell.image = UIImage(named: list.imageA!)
 		cell.nameCell.text = list.nameA
 		cell.priceLbl.text = "\(list.price)"
 		
@@ -66,7 +66,7 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		let data2 = productFromVC!.discProduct[indexPath.row]
 		
 		let VC2_ServicePageVC = ProductDiscrebtion()
-		VC2_ServicePageVC.imageBlogPage.image = data2.imageA
+		VC2_ServicePageVC.imageBlogPage.image = UIImage(named: data2.imageA!)
 		VC2_ServicePageVC.nameBlogPage.text = data2.nameA
 		VC2_ServicePageVC.textBlogPage.text = data2.summaryA
 		VC2_ServicePageVC.ProductFromVC2 = data2

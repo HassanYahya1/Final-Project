@@ -19,6 +19,8 @@ class CartService {
 		studentsCollection.document(student.id).setData([
 			"name": student.nameA,
 			"id": student.id,
+			"price": student.price,
+			"imageA": student.imageA
 			
 		])
 	}
@@ -44,11 +46,11 @@ class CartService {
 				let student = DiscProduct(
 					
 					id: (data["id"] as? String) ?? "No id",
-					imageA: (data["image"] as? UIImage),
+					imageA: (data["imageA"] as? String),
 					nameA:(data["name"] as? String) ?? "No name",
 					staly: "",
 					summaryA: "",
-					price: 0
+					price: (data["price"] as? Double) ?? 0
 				)
 				students.append(student)
 			}

@@ -101,9 +101,11 @@ class CheckOut: UIViewController{
 		let alert = UIAlertController(title: "Congratulations 🎉 ! your purchases are free, Thank you for your shopping at Modern Shopping . ",
 									  message: "",
 									  preferredStyle: .alert)
-		
+
 		alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { action in
 		}))
 		self.present(alert, animated: true)
+//		self.dismiss(animated: true, completion: nil)
+
 	}
 }

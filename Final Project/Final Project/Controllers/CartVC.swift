@@ -38,7 +38,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		)as! ProductCell
 		
 		cell.nameCell.text = pro.nameA
-		cell.imageCell.image = pro.imageA
+		cell.imageCell.image = UIImage(named: pro.imageA ?? "")
 		cell.stalyCell.text = pro.staly
 		cell.priceLbl.text = "\(pro.price)"
 		return cell
@@ -47,17 +47,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	var isFilter = true
 	
 	var products: [DiscProduct] = []
-//
-//	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//		let vc = ProductDiscrebtion()
-//
-//
-//		vc.ProductFromVC2 = cart[indexPath.row]
-//
-//
-//		self.navigationController?.pushViewController(vc, animated: true)
-//
-//	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -68,8 +57,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		
 		if editingStyle == .delete {
-			cart.remove(at: indexPath.row)
-			tableView.deleteRows(at: [indexPath], with: .fade)        }
+			CartService.shared.deleteStudent(studentId: cart[indexPath.row].id)
+//			tableView.deleteRows(at: [indexPath], with: .fade)
+		}
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()

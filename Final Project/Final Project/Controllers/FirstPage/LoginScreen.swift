@@ -28,7 +28,7 @@ class LogInVC: UIViewController {
 	userPassword.layer.cornerRadius = 12
 	userPassword.layer.borderWidth = 1
 	userPassword.layer.borderColor = UIColor.lightGray.cgColor
-	userPassword.placeholder = " Password..."
+	userPassword.placeholder = NSLocalizedString(" Password...", comment: "")
 	userPassword.backgroundColor = .secondarySystemBackground
 	  userPassword.text = "123123"
 	return userPassword
