@@ -21,8 +21,9 @@ class ProductDiscrebtion : UIViewController{
 	//==========================================================================
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		view.backgroundColor = UIColor (named: "myBackgroundColor2")
+		view.backgroundColor = .white
+
+//		view.backgroundColor = UIColor (named: "myBackgroundColor2")
 		
 		imageBlogPage.layer.masksToBounds = true
 		imageBlogPage.layer.cornerRadius = 10

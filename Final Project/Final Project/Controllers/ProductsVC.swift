@@ -17,8 +17,9 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		view.backgroundColor = UIColor (named: "myBackgroundColor2")
+		view.backgroundColor = .white
+
+//		view.backgroundColor = UIColor (named: "myBackgroundColor2")
 		
 		imageCourtPage.translatesAutoresizingMaskIntoConstraints = false
 		nameCourtPage.translatesAutoresizingMaskIntoConstraints = false

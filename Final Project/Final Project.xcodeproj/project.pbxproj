@@ -36,6 +36,7 @@
 		5EC188B02760CF44003BCE37 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EC188B22760CF44003BCE37 /* localization.strings */; };
 		5EC188B62761F417003BCE37 /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188B52761F417003BCE37 /* CheckOutVC.swift */; };
 		5EC188B827621760003BCE37 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188B727621760003BCE37 /* CartService.swift */; };
+		5EC188BA2765E22B003BCE37 /* CollectionCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188B92765E22B003BCE37 /* CollectionCell1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		5EC188B42760CF62003BCE37 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/localization.strings; sourceTree = "<group>"; };
 		5EC188B52761F417003BCE37 /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
 		5EC188B727621760003BCE37 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		5EC188B92765E22B003BCE37 /* CollectionCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				5EC18891275F50B2003BCE37 /* ProductCell.swift */,
 				5EC18893275F50C8003BCE37 /* PharmacyCell.swift */,
+				5EC188B92765E22B003BCE37 /* CollectionCell1.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC18894275F50C8003BCE37 /* PharmacyCell.swift in Sources */,
+				5EC188BA2765E22B003BCE37 /* CollectionCell1.swift in Sources */,
 				5EC1888A275F4F73003BCE37 /* ProductsVC.swift in Sources */,
 				5EC188A5275F7B93003BCE37 /* RegisterScreen.swift in Sources */,
 				5EC188AD275F82CE003BCE37 /* R and LScreen.swift in Sources */,

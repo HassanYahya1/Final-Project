@@ -15,7 +15,6 @@ struct Location {
 	let id: String
 	let userId: String
 	let location: String
- 
 }
 
 

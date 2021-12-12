@@ -17,6 +17,7 @@ class LogInVC: UIViewController {
 	 userEmail.layer.cornerRadius = 12
 	 userEmail.layer.borderWidth = 1
 	 userEmail.layer.borderColor = UIColor.lightGray.cgColor
+	   userEmail.textAlignment = .center
 	 userEmail.placeholder = "Email Address..."
 	 userEmail.backgroundColor = .secondarySystemBackground
 	   userEmail.text = "Hassan@gmail.com"
@@ -27,6 +28,8 @@ class LogInVC: UIViewController {
 	userPassword.translatesAutoresizingMaskIntoConstraints = false
 	userPassword.layer.cornerRadius = 12
 	userPassword.layer.borderWidth = 1
+	  userPassword.textAlignment = .center
+
 	userPassword.layer.borderColor = UIColor.lightGray.cgColor
 	userPassword.placeholder = NSLocalizedString(" Password...", comment: "")
 	userPassword.backgroundColor = .secondarySystemBackground
@@ -137,10 +140,13 @@ class LogInVC: UIViewController {
 		print(error as Any)
 	   return    }
 	  //oben TabVC bage
-	let vc = TabVC()
-   vc.modalPresentationStyle = .fullScreen
-   self.present(vc, animated: true, completion: nil)
-   }
+	  let vc = TabVC()
+		  let nav = UINavigationController()
+		  nav.viewControllers = [vc]
+		  nav.modalPresentationStyle = .fullScreen
+	      nav.modalTransitionStyle = .flipHorizontal
+		  self.present(nav, animated: true, completion: nil)
+ }
  }
 //  oben RegisterVC bage
   @objc private func registerButtonTapped() {
