@@ -40,8 +40,8 @@ class ProductDiscrebtion : UIViewController{
 		])
 		// ------
 		nameBlogPage.textAlignment = .center
-		nameBlogPage.backgroundColor = .systemGray4
-		nameBlogPage.textColor = .label
+		nameBlogPage.backgroundColor = UIColor(  #colorLiteral(red: 0.09343584627, green: 0.3520804048, blue: 0.6051798463, alpha: 1)   )
+		nameBlogPage.textColor = .white
 		nameBlogPage.font = .systemFont(ofSize: 20)
 		nameBlogPage.layer.cornerRadius = 10
 		nameBlogPage.clipsToBounds = true
@@ -56,7 +56,7 @@ class ProductDiscrebtion : UIViewController{
 		])
 		//------
 		staly.font = UIFont.systemFont(ofSize: 18)
-		staly.backgroundColor = .systemGray4
+		staly.backgroundColor = UIColor( #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 0.8846492136))
 		staly.numberOfLines = 0
 		staly.textColor = .label
 		staly.translatesAutoresizingMaskIntoConstraints = false
@@ -72,8 +72,8 @@ class ProductDiscrebtion : UIViewController{
 			staly.heightAnchor.constraint(equalToConstant: 130)
 		])
 		//-----
-		textBlogPage.backgroundColor = .systemGray4
-		textBlogPage.textColor = .label
+		textBlogPage.backgroundColor = UIColor(  #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 0.8846492136) )
+		textBlogPage.textColor = .black
 		textBlogPage.font = .systemFont(ofSize: 18)
 		textBlogPage.numberOfLines = 0
 		textBlogPage.textAlignment = .right
@@ -89,21 +89,21 @@ class ProductDiscrebtion : UIViewController{
 			
 		])
 		//-----------
-		button.setTitle(" أضف إلى السله", for: .normal)
-		button.setTitleColor(.label, for: .normal)
+		button.setTitle( "أضف إلى العربة 🛒" , for: .normal)
+		button.setTitleColor(.black, for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
 		button.layer.cornerRadius = 20
 		button.clipsToBounds = true
 		button.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(button)
-		button.backgroundColor = .systemGray4
+		button.backgroundColor = UIColor(  #colorLiteral(red: 0.6642242074, green: 0.6642400622, blue: 0.6642315388, alpha: 1) )
 		
 		NSLayoutConstraint.activate([
 			button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			
-			button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+			button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
 			button.widthAnchor.constraint(equalToConstant: 350),
-			button.heightAnchor.constraint(equalToConstant: 70)
+			button.heightAnchor.constraint(equalToConstant: 40)
 		])
 		
 		//Add a Simple Alert with Buttons
@@ -111,6 +111,7 @@ class ProductDiscrebtion : UIViewController{
 		self.view.addSubview(button)
 	}
 	@objc func popupAlert(sender: UIButton!){
+		
 		
 		let alert = UIAlertController(title: "هل تريد وضع هذا المنتج في العربه؟",
 									  message: "",

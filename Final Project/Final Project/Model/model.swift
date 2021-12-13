@@ -5,7 +5,12 @@
 //  Created by Hassan Yahya on 01/05/1443 AH.
 //
 
-
+struct FavArabic {
+	var image: String
+	var name: String
+	var id: String
+   
+}
 
 import Foundation
 

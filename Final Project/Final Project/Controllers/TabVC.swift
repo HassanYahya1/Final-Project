@@ -22,11 +22,13 @@ class TabVC: UITabBarController {
 	
 	func setupVCs() {
 		viewControllers = [
-			createNavController(for: Pharmacies(), title: NSLocalizedString("Pharmacies", comment: ""), image: UIImage(systemName: "text.badge.plus")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
+			createNavController(for: Pharmacies(),
+			  title: NSLocalizedString("Pharmacies", comment: "")
+			, image: UIImage(systemName: "text.badge.plus")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
 			createNavController(for: CartViewController(), title: NSLocalizedString("Cart", comment: ""), image: UIImage(systemName: "cart.fill.badge.plus")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
-			createNavController(for:MapVC(), title: NSLocalizedString("Location", comment: ""), image: UIImage(systemName: "location")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
-			createNavController(for: Profile(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person.circle")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1))))
-			
+			createNavController(for:MapVC(), title: NSLocalizedString("location", comment: ""), image: UIImage(systemName: "location.square")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
+			createNavController(for: Profile(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person.circle")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
+			createNavController(for: FavouriteVC(), title: NSLocalizedString("Favourite", comment: ""), image: UIImage(systemName: "star.square.fill")!.withTintColor(UIColor( #colorLiteral(red: 0.1595600843, green: 0.810018003, blue: 0.7768369317, alpha: 1)))),
 			
 		]
 	}

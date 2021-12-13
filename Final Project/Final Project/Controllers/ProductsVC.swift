@@ -13,7 +13,7 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	let imageCourtPage = UIImageView()
 	let nameCourtPage = UILabel()
-
+	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -56,6 +56,8 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		cell.imageCell.image = UIImage(named: list.imageA!)
 		cell.nameCell.text = list.nameA
 		cell.priceLbl.text = "\(list.price)"
+		cell.setCell(book: list)
+//		cell.favButton.setImage(UIImage(named: "like"), for: .normal)
 		
 		return cell
 	}
@@ -71,6 +73,7 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		VC2_ServicePageVC.nameBlogPage.text = data2.nameA
 		VC2_ServicePageVC.textBlogPage.text = data2.summaryA
 		VC2_ServicePageVC.ProductFromVC2 = data2
+		
 		
 		navigationController?.pushViewController(VC2_ServicePageVC, animated: true)
 	}

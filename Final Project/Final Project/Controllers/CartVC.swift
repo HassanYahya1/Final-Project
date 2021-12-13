@@ -37,7 +37,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 			for: indexPath
 		)as! ProductCell
 		
-		cell.nameCell.text = pro.nameA
+		cell.setCell(book: pro)
+		
 		cell.imageCell.image = UIImage(named: pro.imageA ?? "")
 		cell.stalyCell.text = pro.staly
 		cell.priceLbl.text = "\(pro.price)"
@@ -99,4 +100,5 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		let checkOut = CheckOut()
 		present(checkOut, animated: true, completion: nil)
 	}
+	
 }

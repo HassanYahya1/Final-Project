@@ -10,16 +10,21 @@ import UIKit
 class ProductCell: UITableViewCell {
 	
 	static let identifier = "Service_Cell_key"
-	
+	var book: DiscProduct?
+	var isActive: Bool = false
 	let imageCell = UIImageView()
 	let nameCell = UILabel()
 	let stalyCell = UILabel()
 	let priceLbl = UILabel()
+	//	let likeLbl = UILabel()
+	
 	
 	//==========================================================================
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
 		
 		super.init(style: style , reuseIdentifier: reuseIdentifier)
+		contentView.addSubview(favButton)
+		
 		//========================================================================
 		imageCell.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(imageCell)
@@ -73,17 +78,66 @@ class ProductCell: UITableViewCell {
 			nameCell.heightAnchor.constraint(equalToConstant: 45)
 		])
 		
+		
 		self.addSubview(priceLbl)
 		priceLbl.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			priceLbl.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
 			priceLbl.centerXAnchor.constraint(equalTo: centerXAnchor),
 			priceLbl.topAnchor.constraint(equalTo: topAnchor, constant: 25)
-		
+			
 		])
+		//		favButton.frame = CGRect(x: 140, y: contentView.frame.size.height - 55, width: 40, height: 40)
+		self.addSubview(favButton)
+		NSLayoutConstraint.activate([
+			favButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 90),
+			favButton.topAnchor.constraint(equalTo: topAnchor, constant: 24),
+			favButton.heightAnchor.constraint(equalToConstant: 30),
+			favButton.widthAnchor.constraint(equalToConstant: 30)
+			
+		])
+	}
+	var favButton: UIButton = {
+		let button = UIButton()
+		button.translatesAutoresizingMaskIntoConstraints = false
+		button.layer.cornerRadius = 20
+		button.layer.masksToBounds = true
+		button.setImage(UIImage(named: "like"), for: .normal)
+		button.addTarget(self, action: #selector(addfavoritePlace), for: .touchUpInside)
+		return button
+	}()
+	
+	@objc func addfavoritePlace() {
+		
+		if isActive {
+			isActive = false
+			favButton.setImage(UIImage(named: "like2"), for: .normal)
+		} else {
+			
+			isActive = true
+			favButton.setImage(UIImage(named: "like"), for: .normal)
+			
+		}
+		
+		let bookname = nameCell.text ?? ""
+		_ = imageCell.image ?? UIImage(systemName: "house")
+		FavoriteServiceVisitor.shared.addToFavorite(
+			favPlace:
+				FavArabic(
+					image: book?.imageA ?? "",
+					name: bookname,
+					id: book?.id ?? ""
+				)
+		)
+	}
+	func setCell(book: DiscProduct) {
+		imageCell.image = UIImage(named: book.imageA!)
+		nameCell.text = book.nameA
+		self.book = book
 	}
 	//==========================================================================
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 	}
+	
 }

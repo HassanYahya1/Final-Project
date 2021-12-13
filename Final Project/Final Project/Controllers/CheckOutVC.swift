@@ -4,10 +4,11 @@
 //
 //  Created by Hassan Yahya on 05/05/1443 AH.
 //
-
 import UIKit
-class CheckOut: UIViewController{
+
+class CheckOut: UIViewController {
 	
+
 	var wellcomeLab = UILabel()
 	var nameTF = UITextField()
 	var addresTF = UITextField()
@@ -107,5 +108,98 @@ class CheckOut: UIViewController{
 		self.present(alert, animated: true)
 //		self.dismiss(animated: true, completion: nil)
 
+	}
+}
+
+import StoreKit
+
+class YOURViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+	
+	let defaults = UserDefaults.standard
+	let overlayView = UIView()
+	var product_id: NSString?
+
+	override func viewDidLoad() {
+		product_id = "YOUR_PRODUCT_ID"
+		super.viewDidLoad()
+		SKPaymentQueue.default().add(self)
+
+		//Check if product is purchased
+
+		if (defaults.bool(forKey: "purchased")){
+		   // Hide a view or show content depends on your requirement
+			overlayView.isHidden = true
+		} else if (!defaults.bool(forKey: "stonerPurchased")) {
+			print("false")
+		}
+	}
+	@IBAction func unlockAction(sender: AnyObject) {
+
+	   print("About to fetch the products")
+
+	   // We check that we are allow to make the purchase.
+	   if (SKPaymentQueue.canMakePayments()) {
+			var productID:NSSet = NSSet(object: self.product_id!);
+		   var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
+			productsRequest.delegate = self;
+			productsRequest.start();
+			print("Fetching Products");
+		} else {
+			print("can't make purchases");
+		}
+	}
+	func buyProduct(product: SKProduct) {
+		print("Sending the Payment Request to Apple");
+		var payment = SKPayment(product: product)
+		SKPaymentQueue.default().add(payment);
+	}
+	func productsRequest (_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+
+		var count : Int = response.products.count
+		if (count>0) {
+			var validProducts = response.products
+			var validProduct: SKProduct = response.products[0] as SKProduct
+			if (validProduct.productIdentifier == self.product_id as! String) {
+				print(validProduct.localizedTitle)
+				print(validProduct.localizedDescription)
+				print(validProduct.price)
+				buyProduct(product: validProduct);
+			} else {
+				print(validProduct.productIdentifier)
+			}
+		} else {
+			print("nothing")
+		}
+	}
+
+	func request(request: SKRequest!, didFailWithError error: NSError!) {
+		print("Error Fetching product information");
+	}
+
+	
+	func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+		print("Received Payment Transaction Response from Apple");
+
+		for transaction:AnyObject in transactions {
+			if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
+				switch trans.transactionState {
+				case .purchased:
+					print("Product Purchased");
+					SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+					defaults.set(true , forKey: "purchased")
+					overlayView.isHidden = true
+					break;
+				case .failed:
+					print("Purchased Failed");
+					SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+					break;
+				case .restored:
+					print("Already Purchased");
+					SKPaymentQueue.default().restoreCompletedTransactions()
+				default:
+					break;
+				}
+			}
+		}
 	}
 }

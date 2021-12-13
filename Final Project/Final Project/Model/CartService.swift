@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 
 class CartService {
@@ -20,7 +21,8 @@ class CartService {
 			"name": student.nameA,
 			"id": student.id,
 			"price": student.price,
-			"imageA": student.imageA
+			"imageA": student.imageA,
+			"userId": Auth.auth().currentUser?.uid,
 			
 		])
 	}
@@ -33,7 +35,7 @@ class CartService {
 	// Listen to Students
 	func listenToStudents(completion: @escaping (([DiscProduct]) -> Void)) {
 		
-		studentsCollection.addSnapshotListener { snapshot, error in
+		studentsCollection.whereField("userId", isEqualTo:Auth.auth().currentUser?.uid).addSnapshotListener { snapshot, error in
 			if error != nil {
 				return
 			}

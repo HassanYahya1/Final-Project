@@ -37,6 +37,9 @@
 		5EC188B62761F417003BCE37 /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188B52761F417003BCE37 /* CheckOutVC.swift */; };
 		5EC188B827621760003BCE37 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188B727621760003BCE37 /* CartService.swift */; };
 		5EC188BA2765E22B003BCE37 /* CollectionCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188B92765E22B003BCE37 /* CollectionCell1.swift */; };
+		5EC188BC27673FAD003BCE37 /* FavroiteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188BB27673FAD003BCE37 /* FavroiteVC.swift */; };
+		5EC188BE27674003003BCE37 /*  FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188BD27674003003BCE37 /*  FavouriteCell.swift */; };
+		5EC188C027674061003BCE37 /* FS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC188BF27674061003BCE37 /* FS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		5EC188B52761F417003BCE37 /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
 		5EC188B727621760003BCE37 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		5EC188B92765E22B003BCE37 /* CollectionCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell1.swift; sourceTree = "<group>"; };
+		5EC188BB27673FAD003BCE37 /* FavroiteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavroiteVC.swift; sourceTree = "<group>"; };
+		5EC188BD27674003003BCE37 /*  FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " FavouriteCell.swift"; sourceTree = "<group>"; };
+		5EC188BF27674061003BCE37 /* FS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				5EC18870275CAE2F003BCE37 /* model.swift */,
+				5EC188B727621760003BCE37 /* CartService.swift */,
+				5EC188BF27674061003BCE37 /* FS.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,9 +145,9 @@
 				5EC18868275C9720003BCE37 /* MapVC.swift */,
 				5EC188B52761F417003BCE37 /* CheckOutVC.swift */,
 				5EC1886C275C975D003BCE37 /* CartVC.swift */,
-				5EC188B727621760003BCE37 /* CartService.swift */,
-				5EC1888B275F4FE6003BCE37 /* ProductDiscrebtionVC.swift */,
 				5EC18889275F4F73003BCE37 /* ProductsVC.swift */,
+				5EC1888B275F4FE6003BCE37 /* ProductDiscrebtionVC.swift */,
+				5EC188BB27673FAD003BCE37 /* FavroiteVC.swift */,
 				5EC1886A275C9750003BCE37 /* ProfileVC.swift */,
 				5EC188A9275F8279003BCE37 /* FirstPage */,
 			);
@@ -152,6 +160,7 @@
 				5EC18891275F50B2003BCE37 /* ProductCell.swift */,
 				5EC18893275F50C8003BCE37 /* PharmacyCell.swift */,
 				5EC188B92765E22B003BCE37 /* CollectionCell1.swift */,
+				5EC188BD27674003003BCE37 /*  FavouriteCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,12 +264,15 @@
 				5EC18894275F50C8003BCE37 /* PharmacyCell.swift in Sources */,
 				5EC188BA2765E22B003BCE37 /* CollectionCell1.swift in Sources */,
 				5EC1888A275F4F73003BCE37 /* ProductsVC.swift in Sources */,
+				5EC188BC27673FAD003BCE37 /* FavroiteVC.swift in Sources */,
 				5EC188A5275F7B93003BCE37 /* RegisterScreen.swift in Sources */,
 				5EC188AD275F82CE003BCE37 /* R and LScreen.swift in Sources */,
 				5EC1886B275C9750003BCE37 /* ProfileVC.swift in Sources */,
 				5EC18869275C9720003BCE37 /* MapVC.swift in Sources */,
+				5EC188BE27674003003BCE37 /*  FavouriteCell.swift in Sources */,
 				5EC1886D275C975D003BCE37 /* CartVC.swift in Sources */,
 				5EC188B827621760003BCE37 /* CartService.swift in Sources */,
+				5EC188C027674061003BCE37 /* FS.swift in Sources */,
 				5EC1888C275F4FE6003BCE37 /* ProductDiscrebtionVC.swift in Sources */,
 				5EC188AB275F82A5003BCE37 /* LoginScreen.swift in Sources */,
 				5EC18857275C94D8003BCE37 /* TabVC.swift in Sources */,
