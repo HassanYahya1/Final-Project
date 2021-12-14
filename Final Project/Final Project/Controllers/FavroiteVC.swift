@@ -34,7 +34,8 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
 //        setGradientBackground()
 
 		
-		view.backgroundColor = .white
+		view.backgroundColor = UIColor(named: "BackG")
+
 //		self.title = "My List"
 		view.reloadInputViews()
 		

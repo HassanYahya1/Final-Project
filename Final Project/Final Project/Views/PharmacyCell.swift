@@ -50,23 +50,12 @@ class PharmacyCell: UICollectionViewCell {
 	override init (frame: CGRect) {
 		super.init(frame: frame)
 		
-//		contentView.addSubview(staly)
 		contentView.addSubview(myImageView)
 		contentView.addSubview(name)
 		contentView.clipsToBounds = true
 		
 		contentView.layer.cornerRadius = 20
-//		contentView.addSubview(staly)
-//		staly.translatesAutoresizingMaskIntoConstraints = false
-//		NSLayoutConstraint.activate([
-//			staly.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-////			staly.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-//			staly.heightAnchor.constraint(equalToConstant: 50),
-//			staly.rightAnchor.constraint(equalTo: self.contentView.rightAnchor),
-//			staly.leftAnchor.constraint(equalTo: self.contentView.leftAnchor)
-		
-		contentView.backgroundColor = .tertiarySystemFill
-//		])
+		contentView.backgroundColor = UIColor(named: "Cell")
 		
 		contentView.addSubview(myImageView)
 		myImageView.translatesAutoresizingMaskIntoConstraints = false

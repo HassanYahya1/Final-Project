@@ -15,7 +15,7 @@ class collectionViewCell : UICollectionViewCell {
 		imageC.layer.borderWidth = 1
 		imageC.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
 		imageC.layer.cornerRadius = 10
-		imageC.backgroundColor = .systemTeal
+		imageC.backgroundColor = UIColor(named: "Cell")
 		imageC.layer.cornerRadius = .minimumMagnitude(20, 20)
 		imageC.clipsToBounds = true
 		imageC.layer.masksToBounds = true

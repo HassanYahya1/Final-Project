@@ -32,7 +32,8 @@ class ProductCell: UITableViewCell {
 		imageCell.tintColor = .label
 		imageCell.layer.masksToBounds = true
 		imageCell.layer.cornerRadius = 10
-		imageCell.backgroundColor = .systemGray4
+		imageCell.backgroundColor = UIColor(named: "Cell")
+		imageCell.tintColor = UIColor(named: "Tint")
 		//    UIColor(red: 0.26, green: 0.55, blue: 0.55, alpha: 1.00)
 		
 		NSLayoutConstraint.activate([
@@ -46,7 +47,7 @@ class ProductCell: UITableViewCell {
 		stalyCell.numberOfLines = 0
 		stalyCell.textColor = .label
 		stalyCell.translatesAutoresizingMaskIntoConstraints = false
-		stalyCell.backgroundColor = .systemGray4
+		stalyCell.backgroundColor = UIColor(named: "Cell")
 		//    UIColor(red: 0.26, green: 0.55, blue: 0.55, alpha: 1.00)
 		stalyCell.layer.cornerRadius = 10
 		stalyCell.clipsToBounds = true
@@ -66,7 +67,8 @@ class ProductCell: UITableViewCell {
 		
 		nameCell.textColor = .label
 		nameCell.textAlignment = .right
-		nameCell.backgroundColor = .systemGray4
+		nameCell.backgroundColor = UIColor(named: "Cell")
+		nameCell.textColor = UIColor(named: "Tint")
 		//    UIColor(red: 0.26, green: 0.55, blue: 0.55, alpha: 1.00)
 		nameCell.font = UIFont.systemFont(ofSize: 20)
 		

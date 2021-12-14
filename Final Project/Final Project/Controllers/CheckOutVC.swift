@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class CheckOut: UIViewController {
+class CheckOut: UIViewController, UITextFieldDelegate {
 	
 
 	var wellcomeLab = UILabel()
@@ -17,10 +17,15 @@ class CheckOut: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .systemGray
+		
+		nameTF.delegate = self
+		numberTF.delegate = self
+		addresTF.delegate = self
+		
+		view.backgroundColor = UIColor(named: "Addcart")
 		wellcomeLab.translatesAutoresizingMaskIntoConstraints = false
 //		wellcomeLab.backgroundColor = .white
-		wellcomeLab.textColor = .black
+		wellcomeLab.textColor = UIColor(named: "Tint")
 		wellcomeLab.textAlignment = .center
 		wellcomeLab.font = UIFont.systemFont(ofSize: 30, weight: .bold)
 		wellcomeLab.text = "Most Wellcome"
@@ -36,7 +41,8 @@ class CheckOut: UIViewController {
 		 nameTF.layer.borderWidth = 1
 		 nameTF.layer.borderColor = UIColor.lightGray.cgColor
 		 nameTF.placeholder = "Write Your Name"
-		 nameTF.backgroundColor = .secondarySystemBackground
+		 nameTF.backgroundColor = UIColor(named: "Cell")
+		nameTF.textColor = UIColor(named: "Tint")
 		nameTF.textAlignment = .center
 
 //		   nameTF.text = "Hassan@gmail.com"
@@ -54,7 +60,8 @@ class CheckOut: UIViewController {
 		addresTF.layer.borderColor = UIColor.lightGray.cgColor
 		addresTF.placeholder = "Write Your Address"
 		addresTF.textAlignment = .center
-		addresTF.backgroundColor = .secondarySystemBackground
+		addresTF.backgroundColor = UIColor(named: "Cell")
+		addresTF.textColor = UIColor(named: "Tint")
 //		  addresTF.text = "123123"
 		view.addSubview(addresTF)
 		NSLayoutConstraint.activate([
@@ -70,7 +77,8 @@ class CheckOut: UIViewController {
 		numberTF.layer.borderColor = UIColor.lightGray.cgColor
 		numberTF.placeholder = "Write Your Phone Number"
 		numberTF.textAlignment = .center
-		numberTF.backgroundColor = .secondarySystemBackground
+		numberTF.backgroundColor = UIColor(named: "Cell")
+		numberTF.textColor = UIColor(named: "Tint")
 //		  numberTF.text = "123123"
 		view.addSubview(numberTF)
 		NSLayoutConstraint.activate([
@@ -83,7 +91,8 @@ class CheckOut: UIViewController {
 		okbtn.translatesAutoresizingMaskIntoConstraints = false
 		okbtn.setTitle("Check Out", for: .normal)
 		okbtn.setTitleColor(.black, for: .normal)
-		okbtn.backgroundColor = .systemTeal
+		okbtn.backgroundColor = UIColor(named: "LoginB")
+		okbtn.tintColor = UIColor(named: "Cell")
 		okbtn.layer.cornerRadius = 12
 		okbtn.layer.masksToBounds = true
 		okbtn.addTarget(self, action: #selector(popupAlert2), for: .touchUpInside)
@@ -96,7 +105,12 @@ class CheckOut: UIViewController {
 		  okbtn.heightAnchor.constraint(equalToConstant: 40),
 		])
 	}
-	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		nameTF.resignFirstResponder()
+		numberTF.resignFirstResponder()
+		addresTF.resignFirstResponder()
+		return true
+	}
 	@objc func popupAlert2(sender: UIButton!){
          
 		let alert = UIAlertController(title: "Congratulations 🎉 ! your purchases are free, Thank you for your shopping at Modern Shopping . ",
@@ -104,102 +118,10 @@ class CheckOut: UIViewController {
 									  preferredStyle: .alert)
 
 		alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { action in
+					self.dismiss(animated: true, completion: nil)
+
 		}))
 		self.present(alert, animated: true)
-//		self.dismiss(animated: true, completion: nil)
 
-	}
-}
-
-import StoreKit
-
-class YOURViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-	
-	let defaults = UserDefaults.standard
-	let overlayView = UIView()
-	var product_id: NSString?
-
-	override func viewDidLoad() {
-		product_id = "YOUR_PRODUCT_ID"
-		super.viewDidLoad()
-		SKPaymentQueue.default().add(self)
-
-		//Check if product is purchased
-
-		if (defaults.bool(forKey: "purchased")){
-		   // Hide a view or show content depends on your requirement
-			overlayView.isHidden = true
-		} else if (!defaults.bool(forKey: "stonerPurchased")) {
-			print("false")
-		}
-	}
-	@IBAction func unlockAction(sender: AnyObject) {
-
-	   print("About to fetch the products")
-
-	   // We check that we are allow to make the purchase.
-	   if (SKPaymentQueue.canMakePayments()) {
-			var productID:NSSet = NSSet(object: self.product_id!);
-		   var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
-			productsRequest.delegate = self;
-			productsRequest.start();
-			print("Fetching Products");
-		} else {
-			print("can't make purchases");
-		}
-	}
-	func buyProduct(product: SKProduct) {
-		print("Sending the Payment Request to Apple");
-		var payment = SKPayment(product: product)
-		SKPaymentQueue.default().add(payment);
-	}
-	func productsRequest (_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-
-		var count : Int = response.products.count
-		if (count>0) {
-			var validProducts = response.products
-			var validProduct: SKProduct = response.products[0] as SKProduct
-			if (validProduct.productIdentifier == self.product_id as! String) {
-				print(validProduct.localizedTitle)
-				print(validProduct.localizedDescription)
-				print(validProduct.price)
-				buyProduct(product: validProduct);
-			} else {
-				print(validProduct.productIdentifier)
-			}
-		} else {
-			print("nothing")
-		}
-	}
-
-	func request(request: SKRequest!, didFailWithError error: NSError!) {
-		print("Error Fetching product information");
-	}
-
-	
-	func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-		print("Received Payment Transaction Response from Apple");
-
-		for transaction:AnyObject in transactions {
-			if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
-				switch trans.transactionState {
-				case .purchased:
-					print("Product Purchased");
-					SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-					defaults.set(true , forKey: "purchased")
-					overlayView.isHidden = true
-					break;
-				case .failed:
-					print("Purchased Failed");
-					SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-					break;
-				case .restored:
-					print("Already Purchased");
-					SKPaymentQueue.default().restoreCompletedTransactions()
-				default:
-					break;
-				}
-			}
-		}
 	}
 }

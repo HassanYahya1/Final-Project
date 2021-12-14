@@ -21,7 +21,7 @@ class ProductDiscrebtion : UIViewController{
 	//==========================================================================
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .white
+		view.backgroundColor =  UIColor(named: "BackG")
 
 //		view.backgroundColor = UIColor (named: "myBackgroundColor2")
 		
@@ -29,7 +29,7 @@ class ProductDiscrebtion : UIViewController{
 		imageBlogPage.layer.cornerRadius = 10
 		imageBlogPage.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(imageBlogPage)
-		imageBlogPage.backgroundColor = .systemGray4
+		imageBlogPage.backgroundColor =  UIColor(named: "BackG")
 		
 		NSLayoutConstraint.activate([
 			imageBlogPage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -40,8 +40,8 @@ class ProductDiscrebtion : UIViewController{
 		])
 		// ------
 		nameBlogPage.textAlignment = .center
-		nameBlogPage.backgroundColor = UIColor(  #colorLiteral(red: 0.09343584627, green: 0.3520804048, blue: 0.6051798463, alpha: 1)   )
-		nameBlogPage.textColor = .white
+		nameBlogPage.backgroundColor =  UIColor(named: "namepro")
+		nameBlogPage.textColor = UIColor(named: "TCbutton")
 		nameBlogPage.font = .systemFont(ofSize: 20)
 		nameBlogPage.layer.cornerRadius = 10
 		nameBlogPage.clipsToBounds = true
@@ -56,7 +56,7 @@ class ProductDiscrebtion : UIViewController{
 		])
 		//------
 		staly.font = UIFont.systemFont(ofSize: 18)
-		staly.backgroundColor = UIColor( #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 0.8846492136))
+		staly.backgroundColor = UIColor(named: "Cell")
 		staly.numberOfLines = 0
 		staly.textColor = .label
 		staly.translatesAutoresizingMaskIntoConstraints = false
@@ -72,8 +72,8 @@ class ProductDiscrebtion : UIViewController{
 			staly.heightAnchor.constraint(equalToConstant: 130)
 		])
 		//-----
-		textBlogPage.backgroundColor = UIColor(  #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 0.8846492136) )
-		textBlogPage.textColor = .black
+		textBlogPage.backgroundColor = UIColor(named: "Cell")
+		textBlogPage.textColor = UIColor(named: "Tint")
 		textBlogPage.font = .systemFont(ofSize: 18)
 		textBlogPage.numberOfLines = 0
 		textBlogPage.textAlignment = .right
@@ -96,7 +96,9 @@ class ProductDiscrebtion : UIViewController{
 		button.clipsToBounds = true
 		button.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(button)
-		button.backgroundColor = UIColor(  #colorLiteral(red: 0.6642242074, green: 0.6642400622, blue: 0.6642315388, alpha: 1) )
+		button.backgroundColor = UIColor(named: "Addcart")
+		button.tintColor = UIColor(named: "Tint")
+
 		
 		NSLayoutConstraint.activate([
 			button.centerXAnchor.constraint(equalTo: view.centerXAnchor),

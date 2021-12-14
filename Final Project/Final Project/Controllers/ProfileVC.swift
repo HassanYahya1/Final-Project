@@ -9,13 +9,13 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate, UITextFieldDelegate {
 	
 	var users: Array<User> = []
 	lazy var containerView: UIView = {
 		let view = UIView()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		view.backgroundColor = .white
+		view.backgroundColor = UIColor(named: "BackG")
 		view.layer.cornerRadius = 20
 		return view
 	}()
@@ -25,7 +25,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 	lazy var profileImage: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
-		image.backgroundColor = .secondarySystemFill
+		image.backgroundColor = UIColor(named: "Addcart")
 		image.layer.cornerRadius = 25
 		image.isUserInteractionEnabled = true
 		return image
@@ -89,7 +89,9 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		button.layer.cornerRadius = 18
 		button.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
 		button.layer.masksToBounds = true
-		button.backgroundColor = .systemTeal
+		button.backgroundColor = UIColor(named: "LoginB")
+		button.tintColor = UIColor(named: "Tint")
+
 		return button
 	}()
 	
@@ -104,7 +106,9 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		button.layer.cornerRadius = 25
 		button.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
 		button.layer.masksToBounds = true
-		button.backgroundColor = .systemTeal
+		button.backgroundColor = UIColor(named: "LoginB")
+		button.tintColor = UIColor(named: "Tint")
+
 		return button
 	}()
 	
@@ -134,10 +138,14 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 	
 	override func viewDidLoad () {
 		super.viewDidLoad()
+		
+		nameLabel.delegate = self
+		userStatusLabel.delegate = self
 		// Gesture to image
 		let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
 		profileImage.addGestureRecognizer(tapRecognizer)
-		view.backgroundColor = .white
+		view.backgroundColor = UIColor(named: "Cell")
+
 		view.addSubview(containerView)
 		containerView.addSubview (verticalStackView)
 		verticalStackView.addArrangedSubview(profileImage)
@@ -178,7 +186,11 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		present(LogInVC(), animated: true, completion: nil)
 	}
 
-	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		nameLabel.resignFirstResponder()
+		userStatusLabel.resignFirstResponder()
+		return true
+	}
 	//update name , image , status in fire store
 	@objc private func updateButtonTapped() {
 		guard let currentUserID = Auth.auth().currentUser?.uid else {return}

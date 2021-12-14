@@ -53,11 +53,11 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 	
 	override func viewDidLoad(){
 		super.viewDidLoad()
-		
+		searchBar.delegate = self
 		pageControl.numberOfPages = arrCollecPhoto.count
 		startTimer()
 		
-		view.backgroundColor = .white
+		view.backgroundColor = UIColor(named: "BackG")
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .vertical
 		layout.minimumLineSpacing = 10
@@ -180,7 +180,9 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 	}
 	//==========================================================================
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		
+		if collectionView === collectionView1 {
+			return
+		}
 		let data1 = pharmaciesData[indexPath.row]
 		
 		let VC1_CourtPageVC = ProductTV()
@@ -215,6 +217,10 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		search = false
 		users = pharmaciesData
 		collectionView!.reloadData()
+	}
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		searchBar.resignFirstResponder()
+		return true
 	}
 }
 

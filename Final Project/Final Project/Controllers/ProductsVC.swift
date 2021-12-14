@@ -17,7 +17,7 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .white
+		view.backgroundColor =  UIColor(named: "BackG")
 
 //		view.backgroundColor = UIColor (named: "myBackgroundColor2")
 		

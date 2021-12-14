@@ -10,14 +10,14 @@ import UIKit
 import FirebaseAuth
 
 
-class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate, UITextFieldDelegate {
 	
 	var users: Array<User> = []
 	
 	lazy var profileImage: UIImageView = {
 	   let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
-		image.backgroundColor = .white
+		image.backgroundColor = UIColor(named: "BackG")
 		image.isUserInteractionEnabled = true
 		image.layer.cornerRadius = 25
 
@@ -39,7 +39,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		firstName.layer.borderWidth = 1
 		firstName.layer.borderColor = UIColor.lightGray.cgColor
 		firstName.placeholder = " First Name..."
-		firstName.backgroundColor = .secondarySystemBackground
+		firstName.backgroundColor =  UIColor(named: "Cell")
+		firstName.textColor =  UIColor(named: "Tint")
 	  return firstName
   }()
 	
@@ -50,7 +51,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		lastName.layer.borderWidth = 1
 		lastName.layer.borderColor = UIColor.lightGray.cgColor
 		lastName.placeholder = "  Last Name..."
-		lastName.backgroundColor = .secondarySystemBackground
+		lastName.backgroundColor =  UIColor(named: "Cell")
+		lastName.textColor =  UIColor(named: "Tint")
 	  return lastName
   }()
 	  lazy var userEmail: UITextField = {
@@ -60,7 +62,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		  userEmail.layer.borderWidth = 1
 		  userEmail.layer.borderColor = UIColor.lightGray.cgColor
 		  userEmail.placeholder = "  Email Address..."
-		  userEmail.backgroundColor = .secondarySystemBackground
+		  userEmail.backgroundColor =   UIColor(named: "Cell")
+		  userEmail.textColor =  UIColor(named: "Tint")
 		return userEmail
 	}()
 
@@ -72,7 +75,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		userPassword.layer.borderColor = UIColor.lightGray.cgColor
 		userPassword.isSecureTextEntry = true
 		userPassword.placeholder = "  Password..."
-		userPassword.backgroundColor = .secondarySystemBackground
+		userPassword.backgroundColor =  UIColor(named: "Cell")
+		userPassword.textColor =  UIColor(named: "Tint")
 		return userPassword
 	}()
 
@@ -81,7 +85,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
 		registerButton.setTitle("Register", for: .normal)
 		registerButton.setTitleColor(.black, for: .normal)
-		registerButton.backgroundColor = .systemTeal
+		registerButton.backgroundColor =  UIColor(named: "LoginB")
+		registerButton.tintColor =  UIColor(named: "Tint")
 		registerButton.layer.cornerRadius = 12
 		registerButton.layer.masksToBounds = true
 		registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
@@ -92,8 +97,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 	lazy var labelToRegister: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.backgroundColor = .white
-		label.textColor = .black
+		label.backgroundColor =  UIColor(named: "BackG")
+		label.textColor =  UIColor(named: "Tint")
 		label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
 		label.text = "did you have account? "
 		return label
@@ -103,7 +108,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		logInBtn.translatesAutoresizingMaskIntoConstraints = false
 		logInBtn.setTitle("Sign in", for: .normal)
 		logInBtn.setTitleColor(.blue, for: .normal)
-		logInBtn.backgroundColor = .white
+		logInBtn.backgroundColor =  UIColor(named: "BackG")
+		  logInBtn.tintColor =  UIColor(named: "Tint")
 		logInBtn.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
 		logInBtn.titleLabel?.font = .systemFont(ofSize: 12, weight: .medium)
 		return logInBtn
@@ -111,6 +117,10 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		userPassword.delegate = self
+		firstName.delegate = self
+		lastName.delegate = self
+		userEmail.delegate = self
 
 		RegisterService.shared.listenToUsers { newUsers in
 			self.users = newUsers
@@ -118,7 +128,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
 		 profileImage.addGestureRecognizer(tapRecognizer)
 		
-		view.backgroundColor = .white
+		view.backgroundColor =  UIColor(named: "BackG")
 		title = "Register"
 		
 		
@@ -225,6 +235,13 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 	print("Image tapped")
 	  present(imagePicker, animated: true)
   }
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		userPassword.resignFirstResponder()
+		firstName.resignFirstResponder()
+		lastName.resignFirstResponder()
+		userEmail.resignFirstResponder()
+		return true
+	}
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 	let image = info[.editedImage] ?? info [.originalImage] as? UIImage
 	  profileImage.image = image as? UIImage
@@ -236,59 +253,4 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		vc.modalPresentationStyle = .fullScreen
 		self.present(vc, animated: true, completion: nil)
 	  }
-}
-
-import UIKit
-import FirebaseFirestore
-
-class RegisterService {
-	
-	static let shared = RegisterService()
-	
-	let usersCollection = Firestore.firestore().collection("users")
-	
-	// Add user to firestor
-	func addUser(user: User) {
-		usersCollection.document(user.id).setData([
-			"name": user.name,
-			"id": user.id,
-			"image": user.image,
-			"status": user.status,
-			"location" : user.location
-		])
-	}
-	
-	func listenToUsers(completion: @escaping (([User]) -> Void)) {
-		
-		usersCollection.addSnapshotListener { snapshot, error in
-			if error != nil { // if there's any error
-				return
-			}
-			guard let documents = snapshot?.documents else { return }
-			
-			var users: Array<User> = []
-			for document in documents {
-				let data = document.data()
-				let user = User(
-					id: (data["id"] as? String) ?? "No id",
-					name: (data["name"] as? String) ?? "No name",
-					status: (data["status"] as? String ?? "No status"),
-					image: (data["image"] as? String ?? "No image"),
-					location: (data["status"] as? String ?? "No status")
-				)
-				users.append(user)
-			}
-			
-			completion(users)
-		}
-	}
-	func updateUserInfo(user: User) {
-		usersCollection.document(user.id).setData([
-			"id": user.id,
-			"name": user.name,
-			"image": user.image,
-			"status": user.status,
-		], merge: true)
-	}
-
 }

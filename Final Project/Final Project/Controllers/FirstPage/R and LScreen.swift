@@ -17,7 +17,7 @@ class LoginOrRegisterVC: UIViewController {
 		imageView.image = UIImage(named: "mod")
 		imageView.contentMode = .scaleAspectFill
 		imageView.translatesAutoresizingMaskIntoConstraints = false
-		imageView.backgroundColor = .black
+//		imageView.backgroundColor =  UIColor(named: "Cell")
 		
 		return imageView
 	}()
@@ -26,7 +26,7 @@ lazy var loginButton: UIButton = {
 	loginButton.translatesAutoresizingMaskIntoConstraints = false
 	loginButton.setTitle("Log In", for: .normal)
 	loginButton.setTitleColor(.black, for: .normal)
-	loginButton.backgroundColor = .systemTeal
+	loginButton.backgroundColor = UIColor(named: "LoginB")
 	loginButton.layer.cornerRadius = 10
 	loginButton.layer.masksToBounds = true
 	loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -39,7 +39,8 @@ lazy var loginButton: UIButton = {
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
 		registerButton.setTitle("Sing up", for: .normal)
 		registerButton.setTitleColor(.black, for: .normal)
-		registerButton.backgroundColor = .systemFill
+		registerButton.backgroundColor =  UIColor(named: "Cell")
+		registerButton.tintColor =  UIColor(named: "Tint")
 		registerButton.layer.cornerRadius = 10
 		registerButton.layer.masksToBounds = true
 		registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
@@ -49,7 +50,8 @@ lazy var loginButton: UIButton = {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .white
+		view.backgroundColor = UIColor(named: "BackG")
+
 //
 //		image.translatesAutoresizingMaskIntoConstraints = false
 //		view.addSubview(image)

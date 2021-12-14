@@ -17,7 +17,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	  btn.translatesAutoresizingMaskIntoConstraints = false
 	  btn.setTitle("End Your Shopping ✔︎", for: .normal)
 	  btn.setTitleColor(.black, for: .normal)
-	  btn.backgroundColor = .systemTeal
+	  btn.backgroundColor = UIColor(named: "LoginB")
+	  btn.tintColor = UIColor(named: "Tint")
 	  btn.layer.cornerRadius = 12
 	  btn.layer.masksToBounds = true
 	  btn.addTarget(self, action: #selector(payiny), for: .touchUpInside)
@@ -69,7 +70,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 			cart = cartFromFS
 			self.tv.reloadData()
 		}
-		view.backgroundColor = .white
+		view.backgroundColor = UIColor(named: "BackG")
 		tv.delegate = self
 		tv.dataSource = self
 		tv.rowHeight = 80
