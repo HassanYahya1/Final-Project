@@ -23,16 +23,16 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 						  Home(photo: UIImage(named: "IMG_8664")!),
 						  Home(photo: UIImage(named: "IMG_8665")!),
 						  Home(photo: UIImage(named: "IMG_8667")!),
-
+						  
 	]
 	
 	let collectionView1: UICollectionView = {
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .horizontal
 		let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//		cv.backgroundColor = .brown
-//		UIColor(
-//			displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+		//		cv.backgroundColor = .brown
+		//		UIColor(
+		//			displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
 		return cv
 	}()
 	
@@ -66,7 +66,7 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		layout.itemSize = CGSize(width: 180, height: 220)
 		
 		pageControl.translatesAutoresizingMaskIntoConstraints = false
-//		pageControl.backgroundColor = .brown
+		//		pageControl.backgroundColor = .brown
 		view.addSubview(pageControl)
 		NSLayoutConstraint.activate([
 			pageControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
@@ -74,7 +74,7 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 			pageControl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 100),
 			pageControl.heightAnchor.constraint(equalToConstant: 26),
 			pageControl.widthAnchor.constraint(equalToConstant: 150),
-
+			
 		])
 		
 		collectionView = UICollectionView(frame: .zero,
@@ -83,7 +83,7 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		
 		view.addSubview(collectionView)
 		view.addSubview(collectionView1)
-
+		
 		collectionView.register(PharmacyCell.self, forCellWithReuseIdentifier: PharmacyCell.identifier)
 		collectionView.dataSource = self
 		collectionView.delegate = self
@@ -99,11 +99,11 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		searchBar.searchBarStyle = UISearchBar.Style.default
 		searchBar.placeholder = NSLocalizedString("Search", comment: "")
 		searchBar.sizeToFit()
-//		searchBar.isTranslucent = false
-//		searchBar.backgroundImage = UIImage()
+		//		searchBar.isTranslucent = false
+		//		searchBar.backgroundImage = UIImage()
 		searchBar.delegate = self
 		navigationItem.titleView = searchBar
-//		view.backgroundColor = UIColor (named: "hassan")
+		//		view.backgroundColor = UIColor (named: "hassan")
 		
 		//------------
 		collectionView1.delegate = self
@@ -113,20 +113,20 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		
 	}
 	@objc func moveToNextIndex(){
-			if currentCellIndex < arrCollecPhoto.count - 1{
-				currentCellIndex += 1
-			}else{
-				currentCellIndex = 0
-			}
-			
-		   
-			collectionView1.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-			pageControl.currentPage = currentCellIndex
+		if currentCellIndex < arrCollecPhoto.count - 1{
+			currentCellIndex += 1
+		}else{
+			currentCellIndex = 0
 		}
+		
+		
+		collectionView1.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+		pageControl.currentPage = currentCellIndex
+	}
 	func startTimer() {
-			timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
-			
-		}
+		timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
+		
+	}
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		return .init(top: 12, left: 12, bottom: 12, right: 12)
 	}
@@ -164,7 +164,7 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 			let data = arrCollecPhoto[indexPath.row]
 			
 			cell.imageC.image = data.photo
-//			cell.backgroundColor = .yellow
+			//			cell.backgroundColor = .yellow
 			return cell
 		}
 		

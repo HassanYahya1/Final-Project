@@ -13,19 +13,19 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	let imageCell = UIImageView()
 	var tv = UITableView()
 	lazy var btn: UIButton = {
-	  let btn = UIButton()
-	  btn.translatesAutoresizingMaskIntoConstraints = false
-	  btn.setTitle(NSLocalizedString("End Your Shopping ✔︎" , comment: ""), for: .normal)
-	  btn.setTitleColor(.black, for: .normal)
-	  btn.backgroundColor = UIColor(named: "LoginB")
-	  btn.tintColor = UIColor(named: "Tint")
-	  btn.layer.cornerRadius = 12
-	  btn.layer.masksToBounds = true
-	  btn.addTarget(self, action: #selector(payiny), for: .touchUpInside)
-	  btn.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
-	  return btn
+		let btn = UIButton()
+		btn.translatesAutoresizingMaskIntoConstraints = false
+		btn.setTitle(NSLocalizedString("End Your Shopping ✔︎" , comment: ""), for: .normal)
+		btn.setTitleColor(.black, for: .normal)
+		btn.backgroundColor = UIColor(named: "LoginB")
+		btn.tintColor = UIColor(named: "Tint")
+		btn.layer.cornerRadius = 12
+		btn.layer.masksToBounds = true
+		btn.addTarget(self, action: #selector(payiny), for: .touchUpInside)
+		btn.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+		return btn
 	}()
-
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return cart.count
 	}
@@ -60,12 +60,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		if editingStyle == .delete {
 			CartService.shared.deleteStudent(studentId: cart[indexPath.row].id)
-//			tableView.deleteRows(at: [indexPath], with: .fade)
+			//			tableView.deleteRows(at: [indexPath], with: .fade)
 		}
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		
 		CartService.shared.listenToStudents {  cartFromFS in
 			cart = cartFromFS
 			self.tv.reloadData()
@@ -86,13 +86,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 			tv.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
 			
 		])
-			view.addSubview(btn)
+		view.addSubview(btn)
 		btn.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			btn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
 			btn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 700)
-		
+			
 		])
 		
 	}

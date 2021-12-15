@@ -57,5 +57,5 @@ class RegisterService {
 			"status": user.status,
 		], merge: true)
 	}
-
+	
 }

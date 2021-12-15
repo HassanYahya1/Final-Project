@@ -8,13 +8,13 @@ import UIKit
 
 class CheckOut: UIViewController, UITextFieldDelegate {
 	
-
+	
 	var wellcomeLab = UILabel()
 	var nameTF = UITextField()
 	var addresTF = UITextField()
 	var numberTF = UITextField()
 	var okbtn = UIButton()
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -24,7 +24,7 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		
 		view.backgroundColor = UIColor(named: "Addcart")
 		wellcomeLab.translatesAutoresizingMaskIntoConstraints = false
-//		wellcomeLab.backgroundColor = .white
+		//		wellcomeLab.backgroundColor = .white
 		wellcomeLab.textColor = UIColor(named: "Tint")
 		wellcomeLab.textAlignment = .center
 		wellcomeLab.font = UIFont.systemFont(ofSize: 30, weight: .bold)
@@ -34,24 +34,24 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 			wellcomeLab.topAnchor.constraint(equalTo: view.topAnchor,constant: 25),
 			wellcomeLab.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			wellcomeLab.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
-
+			
 		])
-		 nameTF.translatesAutoresizingMaskIntoConstraints = false
-		 nameTF.layer.cornerRadius = 12
-		 nameTF.layer.borderWidth = 1
-		 nameTF.layer.borderColor = UIColor.lightGray.cgColor
-		 nameTF.placeholder = NSLocalizedString("First Name", comment: "")
-		 nameTF.backgroundColor = UIColor(named: "Cell")
+		nameTF.translatesAutoresizingMaskIntoConstraints = false
+		nameTF.layer.cornerRadius = 12
+		nameTF.layer.borderWidth = 1
+		nameTF.layer.borderColor = UIColor.lightGray.cgColor
+		nameTF.placeholder = NSLocalizedString("First Name", comment: "")
+		nameTF.backgroundColor = UIColor(named: "Cell")
 		nameTF.textColor = UIColor(named: "Tint")
 		nameTF.textAlignment = .center
-
-//		   nameTF.text = "Hassan@gmail.com"
+		
+		//		   nameTF.text = "Hassan@gmail.com"
 		view.addSubview(nameTF)
 		NSLayoutConstraint.activate([
-		  nameTF.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-		  nameTF.topAnchor.constraint(equalTo: wellcomeLab.bottomAnchor, constant: 350),
-		  nameTF.widthAnchor.constraint(equalToConstant: 350),
-		  nameTF.heightAnchor.constraint(equalToConstant: 40),
+			nameTF.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+			nameTF.topAnchor.constraint(equalTo: wellcomeLab.bottomAnchor, constant: 350),
+			nameTF.widthAnchor.constraint(equalToConstant: 350),
+			nameTF.heightAnchor.constraint(equalToConstant: 40),
 		])
 		
 		addresTF.translatesAutoresizingMaskIntoConstraints = false
@@ -62,13 +62,12 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		addresTF.textAlignment = .center
 		addresTF.backgroundColor = UIColor(named: "Cell")
 		addresTF.textColor = UIColor(named: "Tint")
-//		  addresTF.text = "123123"
 		view.addSubview(addresTF)
 		NSLayoutConstraint.activate([
-		  addresTF.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-		  addresTF.topAnchor.constraint(equalTo: nameTF.bottomAnchor, constant: 16),
-		  addresTF.widthAnchor.constraint(equalToConstant: 350),
-		  addresTF.heightAnchor.constraint(equalToConstant: 40),
+			addresTF.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+			addresTF.topAnchor.constraint(equalTo: nameTF.bottomAnchor, constant: 16),
+			addresTF.widthAnchor.constraint(equalToConstant: 350),
+			addresTF.heightAnchor.constraint(equalToConstant: 40),
 		])
 		
 		numberTF.translatesAutoresizingMaskIntoConstraints = false
@@ -79,13 +78,13 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		numberTF.textAlignment = .center
 		numberTF.backgroundColor = UIColor(named: "Cell")
 		numberTF.textColor = UIColor(named: "Tint")
-//		  numberTF.text = "123123"
+		//		  numberTF.text = "123123"
 		view.addSubview(numberTF)
 		NSLayoutConstraint.activate([
-		  numberTF.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-		  numberTF.topAnchor.constraint(equalTo: addresTF.bottomAnchor, constant: 16),
-		  numberTF.widthAnchor.constraint(equalToConstant: 350),
-		  numberTF.heightAnchor.constraint(equalToConstant: 40),
+			numberTF.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+			numberTF.topAnchor.constraint(equalTo: addresTF.bottomAnchor, constant: 16),
+			numberTF.widthAnchor.constraint(equalToConstant: 350),
+			numberTF.heightAnchor.constraint(equalToConstant: 40),
 		])
 		
 		okbtn.translatesAutoresizingMaskIntoConstraints = false
@@ -99,10 +98,10 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		okbtn.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
 		view.addSubview(okbtn)
 		NSLayoutConstraint.activate([
-		  okbtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -45),
-		  okbtn.topAnchor.constraint(equalTo: numberTF.bottomAnchor, constant: 30),
-		  okbtn.widthAnchor.constraint(equalToConstant: 300),
-		  okbtn.heightAnchor.constraint(equalToConstant: 40),
+			okbtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -45),
+			okbtn.topAnchor.constraint(equalTo: numberTF.bottomAnchor, constant: 30),
+			okbtn.widthAnchor.constraint(equalToConstant: 300),
+			okbtn.heightAnchor.constraint(equalToConstant: 40),
 		])
 	}
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -112,16 +111,16 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		return true
 	}
 	@objc func popupAlert2(sender: UIButton!){
-         
+		
 		let alert = UIAlertController(title: NSLocalizedString("The products will be delivered to your address within 3-4 working days and payment will be upon receipt. Thank you for your shopping 🛍🖤", comment: ""),
 									  message: "",
 									  preferredStyle: .alert)
-
+		
 		alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: .default, handler: { action in
-					self.dismiss(animated: true, completion: nil)
-
+			self.dismiss(animated: true, completion: nil)
+			
 		}))
 		self.present(alert, animated: true)
-
+		
 	}
 }

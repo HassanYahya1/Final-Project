@@ -9,7 +9,7 @@ struct FavArabic {
 	var image: String
 	var name: String
 	var id: String
-   
+	
 }
 
 import Foundation
@@ -28,15 +28,15 @@ struct Carts {
 	let id: String
 	let name: String
 	let image : String
-
+	
 }
 // add struct user
 struct User {
-  let id: String
-  let name: String
-  let status : String
-  let image : String
-  let location : String
+	let id: String
+	let name: String
+	let status : String
+	let image : String
+	let location : String
 }
 
 import UIKit
@@ -80,10 +80,10 @@ var pharmaciesData = [
 		),DiscProduct(
 			id: UUID().uuidString,
 			imageA: "images",
-			nameA:". شامبو كليفر ١٠٠مل",
+			nameA:". شامبو كلير ١٠٠مل",
 			staly: "",
 			summaryA: """
-- وصف المنتج : كليفر شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
+- وصف المنتج : كلير شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
 
 - السعر : 31 ر.س
 
@@ -124,18 +124,18 @@ var pharmaciesData = [
 
 """, price: 10
 		),
-			
-			DiscProduct(
-				id: UUID().uuidString, imageA: "shopping-2",
-				nameA: " صبغة ريفوليوشن",
-				staly: "",
-				summaryA: """
+					  
+					  DiscProduct(
+						id: UUID().uuidString, imageA: "shopping-2",
+						nameA: " صبغة ريفوليوشن",
+						staly: "",
+						summaryA: """
 وصف المنتج : ريفوليوشن صبغة الشعر المؤقته اللون اللون الارجوانى 90 مل .
 
 السعر : 41 ر.س
 
 """, price: 41
-			)]
+					  )]
 	),
 	//==========================================================================
 	
@@ -180,47 +180,47 @@ var pharmaciesData = [
 السعر : 19 ر.س
 """, price: 19
 		),
-			DiscProduct(
-				id: UUID().uuidString, imageA: "shopping-2",
-				nameA: " صبغة ريفوليوشن",
-				staly: "",
-				summaryA: """
+					  DiscProduct(
+						id: UUID().uuidString, imageA: "shopping-2",
+						nameA: " صبغة ريفوليوشن",
+						staly: "",
+						summaryA: """
 وصف المنتج : ريفوليوشن صبغة الشعر المؤقته اللون اللون الارجوانى 90 مل .
 
 السعر : 41 ر.س
 
 """, price: 41
-			),DiscProduct(
-				id: UUID().uuidString, imageA: "images",
-				nameA:". شامبو كليفر ١٠٠مل",
-				staly: "",
-				summaryA: """
- - وصف المنتج : كليفر شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
+					  ),DiscProduct(
+						id: UUID().uuidString, imageA: "images",
+						nameA:". شامبو كلير ١٠٠مل",
+						staly: "",
+						summaryA: """
+ - وصف المنتج : كلير شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
  
  - السعر : 30.99 ر.س
  
  
  """, price: 30.99
-			),DiscProduct(
-				id: UUID().uuidString, imageA: "images-4",
-				nameA: "مرهم نيفيا",
-				staly: "",
-				summaryA: """
+					  ),DiscProduct(
+						id: UUID().uuidString, imageA: "images-4",
+						nameA: "مرهم نيفيا",
+						staly: "",
+						summaryA: """
 وصف المنتج : يعالج تشققات اليدين و يساعد على ترطيبها .
 
 السعر : 14 ر.س
 """, price: 14
-			),DiscProduct(
-				id: UUID().uuidString, imageA: "images-5",
-				nameA: "استشوار ذكي لاسلكي",
-				staly: "",
-				summaryA: """
+					  ),DiscProduct(
+						id: UUID().uuidString, imageA: "images-5",
+						nameA: "استشوار ذكي لاسلكي",
+						staly: "",
+						summaryA: """
 وصف المنتج : استشوار الماني ذو الثلاث رؤوس متغيره يساعد الشعر المتجعد .
 
 السعر : 81 ر.س
 """, price: 81
-			)
-		   ]
+					  )
+					 ]
 	),
 	
 	//==========================================================================
@@ -248,53 +248,53 @@ var pharmaciesData = [
 السعر : 8 ر.س
 """, price: 8
 		),
-			DiscProduct(
-				id: UUID().uuidString, imageA: "shopping",
-				nameA:". شامبو دوكراى ١٠٠ مل",
-				staly: "",
-				summaryA: """
+					  DiscProduct(
+						id: UUID().uuidString, imageA: "shopping",
+						nameA:". شامبو دوكراى ١٠٠ مل",
+						staly: "",
+						summaryA: """
  - وصف المنتج : وكراي شامبو كيلوال د س للحدّ من الإلتهاب الجلد الدهني 100 مل .
  
  - السعر : 87 ر.س
  
  
  """, price: 87
-			),
-			DiscProduct(
-				id: UUID().uuidString, imageA: "images-10",
-				nameA:"صبغة شعر لون بني",
-				staly: "",
-				summaryA: """
+					  ),
+					  DiscProduct(
+						id: UUID().uuidString, imageA: "images-10",
+						nameA:"صبغة شعر لون بني",
+						staly: "",
+						summaryA: """
   - وصف المنتج : صبغة شعر بني تساعد على لمعان الشعر.
   
   - السعر : 33.90 ر.س
   
   
   """, price: 33.90
-			),
-			DiscProduct(
-				id: UUID().uuidString, imageA: "images-7",
-				nameA:"بروفين مقاس ٤٠٠",
-				staly: "",
-				summaryA: """
+					  ),
+					  DiscProduct(
+						id: UUID().uuidString, imageA: "images-7",
+						nameA:"بروفين مقاس ٤٠٠",
+						staly: "",
+						summaryA: """
    - وصف المنتج : حبوب بروفين مسكن للالام .
    
    - السعر : 10.90 ر.س
    
    
    """, price: 10.90
-			),
-			DiscProduct(
-				id: UUID().uuidString, imageA: "images-8",
-				nameA: "صبغة ويلموكسون",
-				staly: "",
-				summaryA: """
+					  ),
+					  DiscProduct(
+						id: UUID().uuidString, imageA: "images-8",
+						nameA: "صبغة ويلموكسون",
+						staly: "",
+						summaryA: """
  وصف المنتج : صبغة سوداء تساعد على لمعان الشعر .
  
  السعر : 21 ر.س
  """, price: 21
-			)
-		   ]
+					  )
+					 ]
 	),
 	
 	//==========================================================================
@@ -368,19 +368,19 @@ var pharmaciesData = [
  السعر : 71 ر.س
  """, price: 71
 		),
-			DiscProduct(
-				id: UUID().uuidString, imageA: "images",
-				nameA:". شامبو كليفر ١٠٠مل",
-				staly: "",
-				summaryA: """
-   -وصف المنتج : كليفر شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
+					  DiscProduct(
+						id: UUID().uuidString, imageA: "images",
+						nameA:". شامبو كلير ١٠٠مل",
+						staly: "",
+						summaryA: """
+   -وصف المنتج : كلير شامبو يساعد للحدّ من الإلتهاب الجلد الدهني 100 مل .
  
  - السعر : 32 ر.س
-
-
+ 
+ 
  """, price: 32
-			)
-		   ]
+					  )
+					 ]
 	),
 	
-	]
+]

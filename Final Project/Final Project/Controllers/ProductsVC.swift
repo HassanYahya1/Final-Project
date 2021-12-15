@@ -14,12 +14,12 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let imageCourtPage = UIImageView()
 	let nameCourtPage = UILabel()
 	
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor =  UIColor(named: "BackG")
-
-//		view.backgroundColor = UIColor (named: "myBackgroundColor2")
+		
+		//		view.backgroundColor = UIColor (named: "myBackgroundColor2")
 		
 		imageCourtPage.translatesAutoresizingMaskIntoConstraints = false
 		nameCourtPage.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,7 @@ class ProductTV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		cell.nameCell.text = list.nameA
 		cell.priceLbl.text = "\(list.price)"
 		cell.setCell(book: list)
-//		cell.favButton.setImage(UIImage(named: "like"), for: .normal)
+		//		cell.favButton.setImage(UIImage(named: "like"), for: .normal)
 		
 		return cell
 	}

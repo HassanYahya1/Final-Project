@@ -9,34 +9,34 @@
 import UIKit
 
 class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSource{
-
+	
 	
 	
 	var aPlace: Array<FavArabic> = []
 	
 	var selectedIndex = -1
-
+	
 	
 	lazy  var placeTV: UITableView = {
-		  let tableV = UITableView()
-		  tableV.translatesAutoresizingMaskIntoConstraints = false
-		  tableV.delegate = self
-		  tableV.dataSource = self
-		  tableV.register(FavouriteCell.self, forCellReuseIdentifier: "Fav")
-		  tableV.isHidden = false
+		let tableV = UITableView()
+		tableV.translatesAutoresizingMaskIntoConstraints = false
+		tableV.delegate = self
+		tableV.dataSource = self
+		tableV.register(FavouriteCell.self, forCellReuseIdentifier: "Fav")
+		tableV.isHidden = false
 		tableV.backgroundColor = .white
-		  
-		  return tableV
-	  }()
+		
+		return tableV
+	}()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//        setGradientBackground()
-
+		//        setGradientBackground()
+		
 		
 		view.backgroundColor = UIColor(named: "BackG")
-
-//		self.title = "My List"
+		
+		//		self.title = "My List"
 		view.reloadInputViews()
 		
 		view.addSubview(placeTV)
@@ -51,16 +51,16 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
 		
 		
 		FavoriteServiceVisitor.shared.listenToFavoriteBook { favPlace in
-					   self.aPlace = favPlace
-					   self.placeTV.reloadData()
+			self.aPlace = favPlace
+			self.placeTV.reloadData()
 			
 		}
 		
-	
-
- //  var image = UIImage(systemName: "like2")
-//        let image = UIImage(systemName: "checkmark.seal.fill")
-//                           tabBarItem = .init(title: NSLocalizedString("My List", comment: ""), image: image, selectedImage: image)
+		
+		
+		//  var image = UIImage(systemName: "like2")
+		//        let image = UIImage(systemName: "checkmark.seal.fill")
+		//                           tabBarItem = .init(title: NSLocalizedString("My List", comment: ""), image: image, selectedImage: image)
 	}
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return aPlace.count
@@ -81,14 +81,14 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if indexPath.row == selectedIndex {
-		  return 354
+			return 354
 		}else {
-		  return 190
+			return 190
 		}
-	  }
+	}
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-	   
+		
 		
 		let cell = aPlace[indexPath.row]
 		let alertcontroller = UIAlertController(title: "Delete Place"
@@ -96,11 +96,11 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
 												, preferredStyle: UIAlertController.Style.alert
 		)
 		
-			  alertcontroller.addAction(
-					  UIAlertAction(title: "cancel",
-									style: UIAlertAction.Style.default,
-									handler: { Action in print("...")
-			})
+		alertcontroller.addAction(
+			UIAlertAction(title: "cancel",
+						  style: UIAlertAction.Style.default,
+						  handler: { Action in print("...")
+						  })
 			
 		)
 		
@@ -108,18 +108,18 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
 			UIAlertAction(title: "Delete",
 						  style: UIAlertAction.Style.destructive,
 						  handler: { [self] Action in
-				if editingStyle == .delete {
-		FavoriteServiceVisitor.shared.deleteStudent(studentId: aPlace[indexPath.row].id)
-					
-//					self.APlace.remove(at: indexPath.row)
-//					self.placeTV.deleteRows(at: [indexPath], with: .fade)
-				}
-//				self.placeTV.reloadData()
-			})
+							  if editingStyle == .delete {
+								  FavoriteServiceVisitor.shared.deleteStudent(studentId: aPlace[indexPath.row].id)
+								  
+								  //					self.APlace.remove(at: indexPath.row)
+								  //					self.placeTV.deleteRows(at: [indexPath], with: .fade)
+							  }
+							  //				self.placeTV.reloadData()
+						  })
 			
 		)
 		
 		self.present(alertcontroller, animated: true, completion: nil)
-	
+		
 	}
 }

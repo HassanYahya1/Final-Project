@@ -10,29 +10,29 @@
 import UIKit
 
 class LoginOrRegisterVC: UIViewController {
-
-//	let image = UIImageView()
+	
+	//	let image = UIImageView()
 	lazy var imageView: UIImageView = {
 		let imageView = UIImageView()
 		imageView.image = UIImage(named: "mod")
 		imageView.contentMode = .scaleAspectFill
 		imageView.translatesAutoresizingMaskIntoConstraints = false
-//		imageView.backgroundColor =  UIColor(named: "Cell")
+		//		imageView.backgroundColor =  UIColor(named: "Cell")
 		
 		return imageView
 	}()
-lazy var loginButton: UIButton = {
-	let loginButton = UIButton()
-	loginButton.translatesAutoresizingMaskIntoConstraints = false
-	loginButton.setTitle(NSLocalizedString("LogIn", comment: ""), for: .normal)
-	loginButton.setTitleColor(.black, for: .normal)
-	loginButton.backgroundColor = UIColor(named: "LoginB")
-	loginButton.layer.cornerRadius = 10
-	loginButton.layer.masksToBounds = true
-	loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-	loginButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
-	return loginButton
-}()
+	lazy var loginButton: UIButton = {
+		let loginButton = UIButton()
+		loginButton.translatesAutoresizingMaskIntoConstraints = false
+		loginButton.setTitle(NSLocalizedString("LogIn", comment: ""), for: .normal)
+		loginButton.setTitleColor(.black, for: .normal)
+		loginButton.backgroundColor = UIColor(named: "LoginB")
+		loginButton.layer.cornerRadius = 10
+		loginButton.layer.masksToBounds = true
+		loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+		loginButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+		return loginButton
+	}()
 	
 	lazy var registerButton: UIButton = {
 		let registerButton = UIButton()
@@ -51,33 +51,22 @@ lazy var loginButton: UIButton = {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = UIColor(named: "BackG")
-
-//
-//		image.translatesAutoresizingMaskIntoConstraints = false
-//		view.addSubview(image)
-//		image.image = UIImage(named: "IMG_8624")
-//		image.contentMode = .scaleAspectFill
-//		NSLayoutConstraint.activate([
-//			image.leftAnchor.constraint(equalTo: view.leftAnchor),
-//			image.rightAnchor.constraint(equalTo: view.rightAnchor),
-//			image.topAnchor.constraint(equalTo: view.topAnchor),
-//			image.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//		])
+		
 		//Constraint imageView
 		view.addSubview(imageView)
 		NSLayoutConstraint.activate([
 			imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 180),
-		  imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-		 imageView.heightAnchor.constraint(equalToConstant: 300),
-		imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 100/100)
+			imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			imageView.heightAnchor.constraint(equalToConstant: 300),
+			imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 100/100)
 		])
 		//Constraint loginButton
 		view.addSubview(loginButton)
 		NSLayoutConstraint.activate([
-		loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
-		loginButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 90),
-		loginButton.widthAnchor.constraint(equalToConstant: 240),
-		loginButton.heightAnchor.constraint(equalToConstant: 40),
+			loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+			loginButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 90),
+			loginButton.widthAnchor.constraint(equalToConstant: 240),
+			loginButton.heightAnchor.constraint(equalToConstant: 40),
 			
 		])
 		//Constraint registerButton
@@ -88,7 +77,7 @@ lazy var loginButton: UIButton = {
 			registerButton.widthAnchor.constraint(equalToConstant: 240),
 			registerButton.heightAnchor.constraint(equalToConstant: 40),
 		])
-			}
+	}
 	
 	// make loginButtonTapped works
 	@objc private func loginButtonTapped() {

@@ -58,7 +58,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		label.backgroundColor =  UIColor(named: "BackG")
 		label.textColor =  UIColor(named: "Tint")
 		label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-		label.text = NSLocalizedString("Don’t have account? ", comment: "")
+		label.text = NSLocalizedString("Did you have account? ", comment: "")
 		return label
 	}()
 	lazy var registerButton: UIButton = {
@@ -129,7 +129,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		//Constraint registerButton
 		view.addSubview(registerButton)
 		NSLayoutConstraint.activate([
-			registerButton.rightAnchor.constraint(equalTo: labelToRegister.leftAnchor, constant: 170),
+			registerButton.rightAnchor.constraint(equalTo: labelToRegister.leftAnchor, constant: 200),
 			registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 40),
 			registerButton.widthAnchor.constraint(equalToConstant: 50),
 			registerButton.heightAnchor.constraint(equalToConstant: 40),

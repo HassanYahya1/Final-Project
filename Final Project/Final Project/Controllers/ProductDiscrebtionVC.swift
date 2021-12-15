@@ -22,8 +22,8 @@ class ProductDiscrebtion : UIViewController{
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor =  UIColor(named: "BackG")
-
-//		view.backgroundColor = UIColor (named: "myBackgroundColor2")
+		
+		//		view.backgroundColor = UIColor (named: "myBackgroundColor2")
 		
 		imageBlogPage.layer.masksToBounds = true
 		imageBlogPage.layer.cornerRadius = 10
@@ -63,7 +63,7 @@ class ProductDiscrebtion : UIViewController{
 		staly.layer.cornerRadius = 10
 		staly.clipsToBounds = true
 		view.addSubview(staly)
-
+		
 		NSLayoutConstraint.activate([
 			staly.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			staly.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
@@ -98,7 +98,7 @@ class ProductDiscrebtion : UIViewController{
 		view.addSubview(button)
 		button.backgroundColor = UIColor(named: "Addcart")
 		button.tintColor = UIColor(named: "Tint")
-
+		
 		
 		NSLayoutConstraint.activate([
 			button.centerXAnchor.constraint(equalTo: view.centerXAnchor),

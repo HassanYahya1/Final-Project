@@ -10,6 +10,7 @@
 "LogIn" = "LogIn";
 "SignUp" = "SignUp";
 "SignIn" = "SignIn";
+"Cart" = "Cart";
 "Cart 🛒" = "Cart 🛒";
 "Favorite" = "Favorite";
 "Location" = "Location";
@@ -17,7 +18,7 @@
 "First Name" = "First Name  ";
 "Last Name" = "Last Name";
 "Email Address" = "Email Address";
-"did you have account? " = " did you have account?";
+"Did you have account? " = " Did you have account?";
 "Check Out 💵" = "Check Out 💵";
 "Your Number" = "Your Number";
 "Register" = "Register";

@@ -25,19 +25,14 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 	lazy var profileImage: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
-		image.backgroundColor = UIColor(named: "Addcart")
+		image.backgroundColor = UIColor(named: "BackG")
 		image.layer.cornerRadius = 25
+		image.image = UIImage(named: "mod")
+		image.heightAnchor.constraint(equalToConstant: 250).isActive = true
+		image.widthAnchor.constraint(equalToConstant: 250).isActive = true
+		
 		image.isUserInteractionEnabled = true
 		return image
-	}()
-	
-	
-	lazy var imagePicker : UIImagePickerController = {
-		let imagePicker = UIImagePickerController()
-		imagePicker.delegate = self
-		imagePicker.sourceType = .photoLibrary
-		imagePicker.allowsEditing = true
-		return imagePicker
 	}()
 	
 	
@@ -50,7 +45,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		label.layer.cornerRadius = 15
 		label.layer.borderWidth = 1
 		label.layer.borderColor = UIColor.lightGray.cgColor
-
+		
 		return label
 	}()
 	
@@ -73,7 +68,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		label.layer.cornerRadius = 15
 		label.layer.borderWidth = 1
 		label.layer.borderColor = UIColor.lightGray.cgColor
-
+		
 		return label
 	}()
 	
@@ -91,7 +86,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		button.layer.masksToBounds = true
 		button.backgroundColor = UIColor(named: "LoginB")
 		button.tintColor = UIColor(named: "Tint")
-
+		
 		return button
 	}()
 	
@@ -108,7 +103,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		button.layer.masksToBounds = true
 		button.backgroundColor = UIColor(named: "LoginB")
 		button.tintColor = UIColor(named: "Tint")
-
+		
 		return button
 	}()
 	
@@ -141,11 +136,8 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		
 		nameLabel.delegate = self
 		userStatusLabel.delegate = self
-		// Gesture to image
-		let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-		profileImage.addGestureRecognizer(tapRecognizer)
 		view.backgroundColor = UIColor(named: "Cell")
-
+		
 		view.addSubview(containerView)
 		containerView.addSubview (verticalStackView)
 		verticalStackView.addArrangedSubview(profileImage)
@@ -185,7 +177,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		}
 		present(LogInVC(), animated: true, completion: nil)
 	}
-
+	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		nameLabel.resignFirstResponder()
 		userStatusLabel.resignFirstResponder()
@@ -201,21 +193,17 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 			"image":"\(profileImage.image)"
 		])
 		let alert1 = UIAlertController(
-			title: NSLocalizedString("Saved", comment: ""),message: NSLocalizedString("Saved update data", comment: ""),preferredStyle: .alert)
-		alert1.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""),style: .default,handler: { action in
-			print("OK")
-		}
-									  )
+			title: NSLocalizedString("Saved", comment: ""),
+			message: NSLocalizedString("Saved update data", comment: ""),
+			preferredStyle: .alert)
+		alert1.addAction(UIAlertAction(
+			title: NSLocalizedString("Done", comment: ""),
+			style: .default,handler: { action in
+				print("OK")
+			}
+		)
 		)
 		present(alert1, animated: true, completion: nil)
-	}
-	
-	
-	//image picker
-	@objc func imageTapped() {
-		print("Image tapped")
-		present(imagePicker, animated: true)
-		
 	}
 	
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
