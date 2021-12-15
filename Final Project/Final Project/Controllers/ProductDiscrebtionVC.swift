@@ -89,7 +89,7 @@ class ProductDiscrebtion : UIViewController{
 			
 		])
 		//-----------
-		button.setTitle( "أضف إلى العربة 🛒" , for: .normal)
+		button.setTitle( NSLocalizedString("Add to Cart 🛒 ", comment: ""), for: .normal)
 		button.setTitleColor(.black, for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
 		button.layer.cornerRadius = 20
@@ -115,14 +115,14 @@ class ProductDiscrebtion : UIViewController{
 	@objc func popupAlert(sender: UIButton!){
 		
 		
-		let alert = UIAlertController(title: "هل تريد وضع هذا المنتج في العربه؟",
+		let alert = UIAlertController(title: NSLocalizedString("Do you want to put this product in the cart", comment: ""),
 									  message: "",
 									  preferredStyle: .alert)
 		
-		alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { action in
+		alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .default, handler: { action in
 			CartService.shared.addStudent(student: self.ProductFromVC2!)
 		}))
-		alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { action in
+		alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .cancel, handler: { action in
 			print("Do not apply")}))
 		
 		self.present(alert, animated: true)

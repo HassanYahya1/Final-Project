@@ -38,7 +38,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		firstName.layer.cornerRadius = 12
 		firstName.layer.borderWidth = 1
 		firstName.layer.borderColor = UIColor.lightGray.cgColor
-		firstName.placeholder = " First Name..."
+		firstName.placeholder = NSLocalizedString("First Name", comment: "")
 		firstName.backgroundColor =  UIColor(named: "Cell")
 		firstName.textColor =  UIColor(named: "Tint")
 	  return firstName
@@ -50,7 +50,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		lastName.layer.cornerRadius = 12
 		lastName.layer.borderWidth = 1
 		lastName.layer.borderColor = UIColor.lightGray.cgColor
-		lastName.placeholder = "  Last Name..."
+		lastName.placeholder = NSLocalizedString("Last Name", comment: "")
 		lastName.backgroundColor =  UIColor(named: "Cell")
 		lastName.textColor =  UIColor(named: "Tint")
 	  return lastName
@@ -61,7 +61,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		  userEmail.layer.cornerRadius = 12
 		  userEmail.layer.borderWidth = 1
 		  userEmail.layer.borderColor = UIColor.lightGray.cgColor
-		  userEmail.placeholder = "  Email Address..."
+		  userEmail.placeholder = NSLocalizedString("Email Address", comment: "")
 		  userEmail.backgroundColor =   UIColor(named: "Cell")
 		  userEmail.textColor =  UIColor(named: "Tint")
 		return userEmail
@@ -74,7 +74,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		userPassword.layer.borderWidth = 1
 		userPassword.layer.borderColor = UIColor.lightGray.cgColor
 		userPassword.isSecureTextEntry = true
-		userPassword.placeholder = "  Password..."
+		userPassword.placeholder = NSLocalizedString("Password", comment: "")
 		userPassword.backgroundColor =  UIColor(named: "Cell")
 		userPassword.textColor =  UIColor(named: "Tint")
 		return userPassword
@@ -83,7 +83,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 	private let registerButton: UIButton = {
 		let registerButton = UIButton()
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
-		registerButton.setTitle("Register", for: .normal)
+		registerButton.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
 		registerButton.setTitleColor(.black, for: .normal)
 		registerButton.backgroundColor =  UIColor(named: "LoginB")
 		registerButton.tintColor =  UIColor(named: "Tint")
@@ -100,13 +100,13 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		label.backgroundColor =  UIColor(named: "BackG")
 		label.textColor =  UIColor(named: "Tint")
 		label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-		label.text = "did you have account? "
+		label.text = NSLocalizedString("did you have account? ", comment: "")
 		return label
 	  }()
 	  lazy var logInButton: UIButton = {
 		let logInBtn = UIButton()
 		logInBtn.translatesAutoresizingMaskIntoConstraints = false
-		logInBtn.setTitle("Sign in", for: .normal)
+		logInBtn.setTitle(NSLocalizedString("SignIn", comment: ""), for: .normal)
 		logInBtn.setTitleColor(.blue, for: .normal)
 		logInBtn.backgroundColor =  UIColor(named: "BackG")
 		  logInBtn.tintColor =  UIColor(named: "Tint")

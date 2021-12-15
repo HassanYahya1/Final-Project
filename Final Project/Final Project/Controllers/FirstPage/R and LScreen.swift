@@ -24,7 +24,7 @@ class LoginOrRegisterVC: UIViewController {
 lazy var loginButton: UIButton = {
 	let loginButton = UIButton()
 	loginButton.translatesAutoresizingMaskIntoConstraints = false
-	loginButton.setTitle("Log In", for: .normal)
+	loginButton.setTitle(NSLocalizedString("LogIn", comment: ""), for: .normal)
 	loginButton.setTitleColor(.black, for: .normal)
 	loginButton.backgroundColor = UIColor(named: "LoginB")
 	loginButton.layer.cornerRadius = 10
@@ -37,7 +37,7 @@ lazy var loginButton: UIButton = {
 	lazy var registerButton: UIButton = {
 		let registerButton = UIButton()
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
-		registerButton.setTitle("Sing up", for: .normal)
+		registerButton.setTitle(NSLocalizedString("SignUp", comment: ""), for: .normal)
 		registerButton.setTitleColor(.black, for: .normal)
 		registerButton.backgroundColor =  UIColor(named: "Cell")
 		registerButton.tintColor =  UIColor(named: "Tint")

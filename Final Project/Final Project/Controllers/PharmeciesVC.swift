@@ -97,7 +97,7 @@ class Pharmacies: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 		
 		//		view.backgroundColor = UIColor (named: "")
 		searchBar.searchBarStyle = UISearchBar.Style.default
-		searchBar.placeholder = " Search..."
+		searchBar.placeholder = NSLocalizedString("Search", comment: "")
 		searchBar.sizeToFit()
 //		searchBar.isTranslucent = false
 //		searchBar.backgroundImage = UIImage()

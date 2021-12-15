@@ -81,7 +81,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 	//save the name and image and statuse
 	lazy var saveButton: UIButton = {
 		let button = UIButton(type: .system)
-		button.setTitle("Save", for: .normal)
+		button.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
 		button.setTitleColor(.white, for: .normal)
 		button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
 		button.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -98,7 +98,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 	
 	lazy var shareButton: UIButton = {
 		let button = UIButton (type: .system)
-		button.setTitle("ShareURL", for: .normal)
+		button.setTitle(NSLocalizedString("ShareURL", comment: ""), for: .normal)
 		button.setTitleColor(.white, for: .normal)
 		button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
 		button.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -116,7 +116,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 	//sing out from snap chat
 	lazy var singOutButton: UIButton = {
 		let button = UIButton(type: .system)
-		button.setTitle("Sing Out ⇲", for: .normal)
+		button.setTitle(NSLocalizedString("SignOut ⇲", comment: "") , for: .normal)
 		button.setTitleColor(.black, for: .normal)
 		button.titleLabel?.font = UIFont.preferredFont (forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
 		button.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -201,8 +201,8 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 			"image":"\(profileImage.image)"
 		])
 		let alert1 = UIAlertController(
-			title: ("Saved"),message: "Saved update data",preferredStyle: .alert)
-		alert1.addAction(UIAlertAction(title: "OK",style: .default,handler: { action in
+			title: NSLocalizedString("Saved", comment: ""),message: NSLocalizedString("Saved update data", comment: ""),preferredStyle: .alert)
+		alert1.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""),style: .default,handler: { action in
 			print("OK")
 		}
 									  )

@@ -42,7 +42,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 	lazy var loginButton: UIButton = {
 		let loginButton = UIButton()
 		loginButton.translatesAutoresizingMaskIntoConstraints = false
-		loginButton.setTitle("Log In", for: .normal)
+		loginButton.setTitle(NSLocalizedString("LogIn", comment: ""), for: .normal)
 		loginButton.setTitleColor(.black, for: .normal)
 		loginButton.backgroundColor =  UIColor(named: "LoginB")
 		loginButton.tintColor =  UIColor(named: "Cell")
@@ -58,13 +58,13 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		label.backgroundColor =  UIColor(named: "BackG")
 		label.textColor =  UIColor(named: "Tint")
 		label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-		label.text = "Don’t have account? "
+		label.text = NSLocalizedString("Don’t have account? ", comment: "")
 		return label
 	}()
 	lazy var registerButton: UIButton = {
 		let registerButton = UIButton()
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
-		registerButton.setTitle("Sign up", for: .normal)
+		registerButton.setTitle(NSLocalizedString("SignUp", comment: ""), for: .normal)
 		registerButton.setTitleColor(.blue, for: .normal)
 		registerButton.backgroundColor =  UIColor(named: "BackG")
 		registerButton.tintColor =  UIColor(named: "Tint")

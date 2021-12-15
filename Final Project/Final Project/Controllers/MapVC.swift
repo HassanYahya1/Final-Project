@@ -27,27 +27,27 @@ class MapVC: UIViewController {
 	mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
 
 	  let A = MKPointAnnotation()
-	A.title = "صيدلية الدواء"
+	A.title = NSLocalizedString("Al-dawaa Pharmacy", comment: "")
 	A.coordinate = CLLocationCoordinate2D(latitude: 28.391610, longitude: 36.531760)
 	mapView.addAnnotation(A)
 	let S = MKPointAnnotation()
-	S.title = "صيدلية النهدي"
+	S.title = NSLocalizedString("Al-nahdi Pharmacy", comment: "")
 	S.coordinate = CLLocationCoordinate2D(latitude: 24.831233, longitude: 46.745805)
 	mapView.addAnnotation(S)
 	let F = MKPointAnnotation()
-	F.title = "صيدلية بوتز"
+	F.title = NSLocalizedString("Boots Pharmacy", comment: "")
 	F.coordinate = CLLocationCoordinate2D(latitude: 21.549296, longitude: 39.147684)
 	mapView.addAnnotation(F)
 	  let C = MKPointAnnotation()
-	C.title = "صيدلية وايتس"
+	C.title = NSLocalizedString("Whites Pharmacy", comment: "")
 	C.coordinate = CLLocationCoordinate2D(latitude: 18.228567, longitude: 42.543820)
 	mapView.addAnnotation(C)
 	  let D = MKPointAnnotation()
-	D.title = "صيدلية النهدي"
+	D.title = NSLocalizedString("Al-nahdi Pharmacy", comment: "")
 	D.coordinate = CLLocationCoordinate2D(latitude: 17.494942, longitude: 47.101904)
 	mapView.addAnnotation(D)
 	  let W = MKPointAnnotation()
-	  W.title = "صيدلية الدواء"
+	  W.title = NSLocalizedString("Al-dawaa Pharmacy", comment: "")
 	  W.coordinate = CLLocationCoordinate2D(latitude: 26.428751, longitude: 50.107640)
 	  mapView.addAnnotation(W)
   }

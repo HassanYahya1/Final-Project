@@ -1,0 +1,44 @@
+/*
+  localizable.strings
+  Final Project
+
+  Created by Hassan Yahya on 04/05/1443 AH.
+  
+*/
+"Pharmacies" = "الصيدليات";
+" Password..." = "الرقم السري";
+"LogIn" = "الدخول";
+"SignUp" = "التسجيل";
+"SignIn" = "الدخول";
+"Cart 🛒" = "السلة 🛒";
+"Favorite" = "المفضلة";
+"Location" = "الموقع";
+"Add to Cart 🛒 " = "أضف إلئ السلة 🛒" ;
+"First Name" = "الإسم الأول " ;
+"Last Name" = "الإسم الاخير" ;
+"Email Address" = "الإيميل" ;
+"Your Address" = "العنوان" ;
+"did you have account? " = "هل لديك حساب ";
+"Check Out 💵" = "الدفع 💵";
+"Your Number" = "رقم الهاتف";
+"Register" = "تسجيل";
+"Profile" = "الملف الشخصي";
+"Email Address" = "الإيميل";
+"Al-dawaa Pharmacy" = "صيدلية الدواء";
+"Al-nahdi Pharmacy" = "صيدلية النهدي";
+"Whites Pharmacy" = "صيدلية وايتس";
+"Boots Pharmacy" = "صيدلية بوتز";
+"SignOut ⇲" = "تسجيل الخروج";
+"Search" = "البحث";
+"Thank you for your trust" = "شكرا لثقتكٌم";
+
+"The products will be delivered to your address within 3-4 working days and payment will be upon receipt. Thank you for your shopping 🛍🖤" = "سيتم توصيل المنتجات لعنوانك خلال ٣ - ٤ ايام عمل و سيكون الدفع عند الاستلام . شكرًا لتسوقكم 🛍🖤" ;
+
+"Done" = "تم";
+"End Your Shopping ✔︎" = "إنهاء التسوق ✔︎ ";
+"Do you want to put this product in the cart" = "هل تريد وضع هذا المنتج في السله؟";
+;"نعم" = "Yes"
+"Save" = "حفظ";
+"ShareURL" = "مشاركة الرابط";
+"Saved update data" = "تم حفظ التحديثات";
+"Saved" = "تم الحفظ";

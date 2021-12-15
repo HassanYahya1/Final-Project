@@ -63,7 +63,7 @@ var pharmaciesData = [
 	
 	PharmacyStruct(
 		image: UIImage(named: "النهدي"),
-		name: "صيدلية النهدي",
+		name: NSLocalizedString("Al-nahdi Pharmacy", comment: ""),
 		
 		discProduct: [DiscProduct(
 			id: UUID().uuidString,
@@ -141,7 +141,7 @@ var pharmaciesData = [
 	
 	PharmacyStruct(
 		image: UIImage(named: "الدوا"),
-		name: "صيدلية الدواء",
+		name: NSLocalizedString("Al-dawaa Pharmacy", comment: ""),
 		
 		discProduct: [DiscProduct(
 			id: UUID().uuidString, imageA: "بندول١",
@@ -227,7 +227,7 @@ var pharmaciesData = [
 	
 	PharmacyStruct(
 		image: UIImage(named: "وايتس"),
-		name: "صيدلية وايتس",
+		name:NSLocalizedString("Whites Pharmacy", comment: ""),
 		
 		discProduct: [DiscProduct(
 			id: UUID().uuidString, imageA: "images-5",
@@ -300,7 +300,7 @@ var pharmaciesData = [
 	//==========================================================================
 	PharmacyStruct(
 		image: UIImage(named: "بوت"),
-		name: "صيدلية بوتز",
+		name: NSLocalizedString("Boots Pharmacy", comment: ""),
 		
 		discProduct: [DiscProduct(
 			id: UUID().uuidString, imageA: "كحه",

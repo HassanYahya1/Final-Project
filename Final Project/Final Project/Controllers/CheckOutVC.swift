@@ -28,7 +28,7 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		wellcomeLab.textColor = UIColor(named: "Tint")
 		wellcomeLab.textAlignment = .center
 		wellcomeLab.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-		wellcomeLab.text = "Most Wellcome"
+		wellcomeLab.text = NSLocalizedString("Thank you for your trust", comment: "")
 		view.addSubview(wellcomeLab)
 		NSLayoutConstraint.activate([
 			wellcomeLab.topAnchor.constraint(equalTo: view.topAnchor,constant: 25),
@@ -40,7 +40,7 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		 nameTF.layer.cornerRadius = 12
 		 nameTF.layer.borderWidth = 1
 		 nameTF.layer.borderColor = UIColor.lightGray.cgColor
-		 nameTF.placeholder = "Write Your Name"
+		 nameTF.placeholder = NSLocalizedString("First Name", comment: "")
 		 nameTF.backgroundColor = UIColor(named: "Cell")
 		nameTF.textColor = UIColor(named: "Tint")
 		nameTF.textAlignment = .center
@@ -58,7 +58,7 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		addresTF.layer.cornerRadius = 12
 		addresTF.layer.borderWidth = 1
 		addresTF.layer.borderColor = UIColor.lightGray.cgColor
-		addresTF.placeholder = "Write Your Address"
+		addresTF.placeholder = NSLocalizedString("Your Address", comment: "")
 		addresTF.textAlignment = .center
 		addresTF.backgroundColor = UIColor(named: "Cell")
 		addresTF.textColor = UIColor(named: "Tint")
@@ -75,7 +75,7 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		numberTF.layer.cornerRadius = 12
 		numberTF.layer.borderWidth = 1
 		numberTF.layer.borderColor = UIColor.lightGray.cgColor
-		numberTF.placeholder = "Write Your Phone Number"
+		numberTF.placeholder = NSLocalizedString("Your Number", comment: "")
 		numberTF.textAlignment = .center
 		numberTF.backgroundColor = UIColor(named: "Cell")
 		numberTF.textColor = UIColor(named: "Tint")
@@ -89,7 +89,7 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		])
 		
 		okbtn.translatesAutoresizingMaskIntoConstraints = false
-		okbtn.setTitle("Check Out", for: .normal)
+		okbtn.setTitle(NSLocalizedString("Check Out", comment: ""), for: .normal)
 		okbtn.setTitleColor(.black, for: .normal)
 		okbtn.backgroundColor = UIColor(named: "LoginB")
 		okbtn.tintColor = UIColor(named: "Cell")
@@ -113,11 +113,11 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 	}
 	@objc func popupAlert2(sender: UIButton!){
          
-		let alert = UIAlertController(title: "Congratulations 🎉 ! your purchases are free, Thank you for your shopping at Modern Shopping . ",
+		let alert = UIAlertController(title: NSLocalizedString("The products will be delivered to your address within 3-4 working days and payment will be upon receipt. Thank you for your shopping 🛍🖤", comment: ""),
 									  message: "",
 									  preferredStyle: .alert)
 
-		alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { action in
+		alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: .default, handler: { action in
 					self.dismiss(animated: true, completion: nil)
 
 		}))
