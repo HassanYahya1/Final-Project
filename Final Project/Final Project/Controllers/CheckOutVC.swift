@@ -88,7 +88,7 @@ class CheckOut: UIViewController, UITextFieldDelegate {
 		])
 		
 		okbtn.translatesAutoresizingMaskIntoConstraints = false
-		okbtn.setTitle(NSLocalizedString("Check Out", comment: ""), for: .normal)
+		okbtn.setTitle(NSLocalizedString("Check Out 💵", comment: ""), for: .normal)
 		okbtn.setTitleColor(.black, for: .normal)
 		okbtn.backgroundColor = UIColor(named: "LoginB")
 		okbtn.tintColor = UIColor(named: "Cell")
