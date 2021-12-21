@@ -26,8 +26,10 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
 		image.backgroundColor = UIColor(named: "BackG")
-		image.layer.cornerRadius = 25
-		image.image = UIImage(named: "mod")
+		image.layer.cornerRadius = 20
+		image.layer.masksToBounds = true
+		image.clipsToBounds = true
+		image.image = UIImage(named: "IMG_8782")
 		image.heightAnchor.constraint(equalToConstant: 250).isActive = true
 		image.widthAnchor.constraint(equalToConstant: 250).isActive = true
 		
@@ -44,6 +46,8 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		label.borderStyle = .line
 		label.layer.cornerRadius = 15
 		label.layer.borderWidth = 1
+		label.layer.masksToBounds = true
+		label.clipsToBounds = true
 		label.layer.borderColor = UIColor.lightGray.cgColor
 		
 		return label
@@ -67,6 +71,8 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		label.borderStyle = .line
 		label.layer.cornerRadius = 15
 		label.layer.borderWidth = 1
+		label.layer.masksToBounds = true
+		label.clipsToBounds = true
 		label.layer.borderColor = UIColor.lightGray.cgColor
 		
 		return label
@@ -80,7 +86,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		button.setTitleColor(.white, for: .normal)
 		button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
 		button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-		button.widthAnchor.constraint(equalToConstant: 250).isActive = true
+		button.widthAnchor.constraint(equalToConstant: 400).isActive = true
 		button.layer.cornerRadius = 18
 		button.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
 		button.layer.masksToBounds = true
@@ -149,7 +155,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		verticalStackView.addArrangedSubview(singOutButton)
 		NSLayoutConstraint.activate([
 			containerView.heightAnchor.constraint(equalToConstant: 500),
-			containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+			containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
 			containerView.leadingAnchor.constraint (equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 6),
 			view.trailingAnchor.constraint(equalToSystemSpacingAfter: containerView.trailingAnchor, multiplier: 6),
 			verticalStackView.topAnchor.constraint(equalToSystemSpacingBelow: containerView.topAnchor, multiplier: 2),

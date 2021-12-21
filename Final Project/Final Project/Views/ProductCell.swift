@@ -31,7 +31,7 @@ class ProductCell: UITableViewCell {
 		imageCell.contentMode = .scaleAspectFit
 		imageCell.tintColor = .label
 		imageCell.layer.masksToBounds = true
-		imageCell.layer.cornerRadius = 10
+		imageCell.layer.cornerRadius = 15
 		imageCell.backgroundColor = UIColor(named: "Cell")
 		imageCell.tintColor = UIColor(named: "Tint")
 		//    UIColor(red: 0.26, green: 0.55, blue: 0.55, alpha: 1.00)
