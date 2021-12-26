@@ -12,6 +12,9 @@ import FirebaseAuth
 
 class LogInVC: UIViewController, UITextFieldDelegate{
 	
+	let backImage = UIImageView()
+
+	
 	lazy var userEmail: UITextField = {
 		
 		let userEmail = UITextField()
@@ -57,7 +60,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 	lazy var labelToRegister: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.backgroundColor =  UIColor(named: "BackG")
+//		label.backgroundColor =  UIColor(named: "BackG")
 		label.textColor =  UIColor(named: "Tint")
 		label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
 		label.text = NSLocalizedString("Did you have account? ", comment: "")
@@ -68,7 +71,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
 		registerButton.setTitle(NSLocalizedString("SignUp", comment: ""), for: .normal)
 		registerButton.setTitleColor(.blue, for: .normal)
-		registerButton.backgroundColor =  UIColor(named: "BackG")
+//		registerButton.backgroundColor =  UIColor(named: "BackG")
 		registerButton.tintColor =  UIColor(named: "Tint")
 		registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
 		registerButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .medium)
@@ -84,6 +87,18 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 	}()
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		view.addSubview(backImage)
+		backImage.image = UIImage(named: "bak")
+		backImage.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			backImage.topAnchor.constraint(equalTo: view.topAnchor),
+			backImage.rightAnchor.constraint(equalTo: view.rightAnchor),
+			backImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+			backImage.leftAnchor.constraint(equalTo: view.leftAnchor)
+
+		])
+
 		userEmail.delegate = self
 		userPassword.delegate = self
 		view.backgroundColor =  UIColor(named: "BackG")
@@ -91,7 +106,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		//Constraint imageView
 		view.addSubview(imageView)
 		NSLayoutConstraint.activate([
-			imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+			imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
 			imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			imageView.heightAnchor.constraint(equalToConstant: 300),
 			imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 100/100)
@@ -100,7 +115,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		view.addSubview(userEmail)
 		NSLayoutConstraint.activate([
 			userEmail.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-			userEmail.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 80),
+			userEmail.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 110),
 			userEmail.widthAnchor.constraint(equalToConstant: 350),
 			userEmail.heightAnchor.constraint(equalToConstant: 40),
 		])
@@ -124,7 +139,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		view.addSubview(labelToRegister)
 		NSLayoutConstraint.activate([
 			labelToRegister.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35),
-			labelToRegister.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 40),
+			labelToRegister.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
 			labelToRegister.widthAnchor.constraint(equalToConstant: 300),
 			labelToRegister.heightAnchor.constraint(equalToConstant: 40),
 		])
@@ -132,7 +147,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		view.addSubview(registerButton)
 		NSLayoutConstraint.activate([
 			registerButton.rightAnchor.constraint(equalTo: labelToRegister.leftAnchor, constant: 200),
-			registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 40),
+			registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
 			registerButton.widthAnchor.constraint(equalToConstant: 50),
 			registerButton.heightAnchor.constraint(equalToConstant: 40),
 		])

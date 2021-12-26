@@ -173,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				5EC188AA275F82A5003BCE37 /* LoginScreen.swift */,
-				5EC188AC275F82CE003BCE37 /* R and LScreen.swift */,
 				5EC188A4275F7B93003BCE37 /* RegisterScreen.swift */,
+				5EC188AC275F82CE003BCE37 /* R and LScreen.swift */,
 			);
 			path = FirstPage;
 			sourceTree = "<group>";
