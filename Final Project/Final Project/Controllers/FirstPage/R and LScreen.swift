@@ -11,7 +11,8 @@ import UIKit
 
 class LoginOrRegisterVC: UIViewController {
 	
-	//	let image = UIImageView()
+		let backImage = UIImageView()
+	
 	lazy var imageView: UIImageView = {
 		let imageView = UIImageView()
 		imageView.image = UIImage(named: "mod")
@@ -28,6 +29,7 @@ class LoginOrRegisterVC: UIViewController {
 		loginButton.setTitleColor(.black, for: .normal)
 		loginButton.backgroundColor = UIColor(named: "LoginB")
 		loginButton.layer.cornerRadius = 10
+//		loginButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
 		loginButton.layer.masksToBounds = true
 		loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 		loginButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
@@ -52,6 +54,17 @@ class LoginOrRegisterVC: UIViewController {
 		super.viewDidLoad()
 		view.backgroundColor = UIColor(named: "BackG")
 		
+		
+		view.addSubview(backImage)
+		backImage.image = UIImage(named: "back")
+		backImage.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			backImage.topAnchor.constraint(equalTo: view.topAnchor),
+			backImage.rightAnchor.constraint(equalTo: view.rightAnchor),
+			backImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+			backImage.leftAnchor.constraint(equalTo: view.leftAnchor)
+
+		])
 		//Constraint imageView
 		view.addSubview(imageView)
 		NSLayoutConstraint.activate([
@@ -63,18 +76,18 @@ class LoginOrRegisterVC: UIViewController {
 		//Constraint loginButton
 		view.addSubview(loginButton)
 		NSLayoutConstraint.activate([
-			loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+			loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
 			loginButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 90),
-			loginButton.widthAnchor.constraint(equalToConstant: 240),
+			loginButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
 			loginButton.heightAnchor.constraint(equalToConstant: 40),
 			
 		])
 		//Constraint registerButton
 		view.addSubview(registerButton)
 		NSLayoutConstraint.activate([
-			registerButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+			registerButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
 			registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 30),
-			registerButton.widthAnchor.constraint(equalToConstant: 240),
+			registerButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
 			registerButton.heightAnchor.constraint(equalToConstant: 40),
 		])
 	}

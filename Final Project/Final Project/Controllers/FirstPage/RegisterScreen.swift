@@ -17,20 +17,22 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 	lazy var profileImage: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
-		image.backgroundColor = UIColor(named: "BackG")
+//		image.backgroundColor = UIColor(named: "BackG")
 		image.isUserInteractionEnabled = true
 		image.layer.cornerRadius = 25
+		image.contentMode = .scaleAspectFill
+		image.image = UIImage(named: "mod")
 		
 		return image
 	}()
-	lazy var imagePicker : UIImagePickerController = {
-		let imagePicker = UIImagePickerController()
-		imagePicker.delegate = self
-		imagePicker.sourceType = .photoLibrary
-		imagePicker.allowsEditing = true
-		
-		return imagePicker
-	}()
+//	lazy var imagePicker : UIImagePickerController = {
+//		let imagePicker = UIImagePickerController()
+//		imagePicker.delegate = self
+//		imagePicker.sourceType = .photoLibrary
+//		imagePicker.allowsEditing = true
+//
+//		return imagePicker
+//	}()
 	
 	lazy var firstName: UITextField = {
 		let firstName = UITextField()
@@ -125,20 +127,21 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		RegisterService.shared.listenToUsers { newUsers in
 			self.users = newUsers
 		}
-		let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-		profileImage.addGestureRecognizer(tapRecognizer)
+//		let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+//		profileImage.addGestureRecognizer(tapRecognizer)
 		
 		view.backgroundColor =  UIColor(named: "BackG")
 		title = "Register"
 		
 		
 		//Constraint firstName
+		//Constraint imageView
 		view.addSubview(profileImage)
 		NSLayoutConstraint.activate([
-			profileImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -145),
-			profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-			profileImage.widthAnchor.constraint(equalToConstant: 100),
-			profileImage.heightAnchor.constraint(equalToConstant: 100),
+			profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+			profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			profileImage.heightAnchor.constraint(equalToConstant: 300),
+			profileImage.widthAnchor.constraint(equalTo: profileImage.heightAnchor,multiplier: 100/100)
 		])
 		view.addSubview(firstName)
 		NSLayoutConstraint.activate([
@@ -230,11 +233,11 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		self.present(vc, animated: true, completion: nil)
 	}
 	
-	// image picker in register page
-	@objc func imageTapped() {
-		print("Image tapped")
-		present(imagePicker, animated: true)
-	}
+//	// image picker in register page
+//	@objc func imageTapped() {
+//		print("Image tapped")
+//		present(imagePicker, animated: true)
+//	}
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		userPassword.resignFirstResponder()
 		firstName.resignFirstResponder()

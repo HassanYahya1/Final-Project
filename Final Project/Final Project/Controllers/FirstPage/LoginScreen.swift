@@ -11,7 +11,9 @@ import FirebaseAuth
 
 
 class LogInVC: UIViewController, UITextFieldDelegate{
+	
 	lazy var userEmail: UITextField = {
+		
 		let userEmail = UITextField()
 		userEmail.translatesAutoresizingMaskIntoConstraints = false
 		userEmail.layer.cornerRadius = 12
