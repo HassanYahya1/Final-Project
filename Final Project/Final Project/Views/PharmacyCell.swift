@@ -41,7 +41,7 @@ class PharmacyCell: UICollectionViewCell {
 		label.textColor = .label
 		label.numberOfLines = 0
 		label.textAlignment = .center
-		//		label.backgroundColor = .systemGray4
+//				label.backgroundColor = .white
 		//    UIColor(red: 0.26, green: 0.55, blue: 0.55, alpha: 1.00)
 		
 		return label

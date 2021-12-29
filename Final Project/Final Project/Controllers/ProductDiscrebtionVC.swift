@@ -68,7 +68,7 @@ class ProductDiscrebtion : UIViewController{
 			staly.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			staly.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
 			staly.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-			staly.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 20),
+			staly.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 10),
 			staly.heightAnchor.constraint(equalToConstant: 130)
 		])
 		//-----
@@ -84,7 +84,7 @@ class ProductDiscrebtion : UIViewController{
 			textBlogPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			textBlogPage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
 			textBlogPage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
-			textBlogPage.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 20),
+			textBlogPage.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 10),
 			textBlogPage.heightAnchor.constraint(equalToConstant: 120)
 			
 		])
@@ -92,7 +92,7 @@ class ProductDiscrebtion : UIViewController{
 		button.setTitle( NSLocalizedString("Add to Cart 🛒 ", comment: ""), for: .normal)
 		button.setTitleColor(.black, for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-		button.layer.cornerRadius = 20
+		button.layer.cornerRadius = 10
 		button.clipsToBounds = true
 		button.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(button)
@@ -104,7 +104,7 @@ class ProductDiscrebtion : UIViewController{
 			button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			
 			button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-			button.widthAnchor.constraint(equalToConstant: 350),
+			button.widthAnchor.constraint(equalToConstant: 260),
 			button.heightAnchor.constraint(equalToConstant: 40)
 		])
 		

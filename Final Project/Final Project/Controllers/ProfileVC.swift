@@ -47,6 +47,8 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		label.layer.cornerRadius = 15
 		label.layer.borderWidth = 1
 		label.layer.masksToBounds = true
+		label.placeholder = NSLocalizedString("Your Name", comment: "")
+		label.textAlignment = .center
 		label.clipsToBounds = true
 		label.layer.borderColor = UIColor.lightGray.cgColor
 		
@@ -72,6 +74,8 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		label.layer.cornerRadius = 15
 		label.layer.borderWidth = 1
 		label.layer.masksToBounds = true
+		label.placeholder = NSLocalizedString("Status", comment: "")
+		label.textAlignment = .center
 		label.clipsToBounds = true
 		label.layer.borderColor = UIColor.lightGray.cgColor
 		
@@ -87,7 +91,7 @@ class Profile: UIViewController , UIImagePickerControllerDelegate , UINavigation
 		button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
 		button.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		button.widthAnchor.constraint(equalToConstant: 400).isActive = true
-		button.layer.cornerRadius = 18
+		button.layer.cornerRadius = 25
 		button.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
 		button.layer.masksToBounds = true
 		button.backgroundColor = UIColor(named: "LoginB")

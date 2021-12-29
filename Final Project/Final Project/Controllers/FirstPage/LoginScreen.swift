@@ -48,9 +48,9 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		let loginButton = UIButton()
 		loginButton.translatesAutoresizingMaskIntoConstraints = false
 		loginButton.setTitle(NSLocalizedString("LogIn", comment: ""), for: .normal)
-		loginButton.setTitleColor(.black, for: .normal)
-		loginButton.backgroundColor =  UIColor(named: "LoginB")
-		loginButton.tintColor =  UIColor(named: "Cell")
+		loginButton.setTitleColor(.white, for: .normal)
+		loginButton.backgroundColor = UIColor(named: "LoginB")
+		loginButton.tintColor = UIColor(named: "Tint")
 		loginButton.layer.cornerRadius = 12
 		loginButton.layer.masksToBounds = true
 		loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -79,7 +79,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 	}()
 	lazy var imageView: UIImageView = {
 		let imageView = UIImageView()
-		imageView.image = UIImage(named: "mod")
+		imageView.image = UIImage(named: "looo")
 		imageView.contentMode = .scaleAspectFill
 		imageView.layer.cornerRadius = 25
 		imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +89,7 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		super.viewDidLoad()
 		
 		view.addSubview(backImage)
-		backImage.image = UIImage(named: "bak")
+//		backImage.image = UIImage(named: "bak")
 		backImage.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			backImage.topAnchor.constraint(equalTo: view.topAnchor),
@@ -108,14 +108,14 @@ class LogInVC: UIViewController, UITextFieldDelegate{
 		NSLayoutConstraint.activate([
 			imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
 			imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-			imageView.heightAnchor.constraint(equalToConstant: 300),
-			imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 100/100)
+			imageView.heightAnchor.constraint(equalToConstant: 400),
+			imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 150/150)
 		])
 		//Constraint userEmail
 		view.addSubview(userEmail)
 		NSLayoutConstraint.activate([
 			userEmail.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-			userEmail.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 110),
+			userEmail.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 0),
 			userEmail.widthAnchor.constraint(equalToConstant: 350),
 			userEmail.heightAnchor.constraint(equalToConstant: 40),
 		])

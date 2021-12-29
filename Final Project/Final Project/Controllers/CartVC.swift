@@ -16,7 +16,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		let btn = UIButton()
 		btn.translatesAutoresizingMaskIntoConstraints = false
 		btn.setTitle(NSLocalizedString("End Your Shopping ✔︎" , comment: ""), for: .normal)
-		btn.setTitleColor(.black, for: .normal)
+		btn.setTitleColor(.white, for: .normal)
 		btn.backgroundColor = UIColor(named: "LoginB")
 		btn.tintColor = UIColor(named: "Tint")
 		btn.layer.cornerRadius = 12

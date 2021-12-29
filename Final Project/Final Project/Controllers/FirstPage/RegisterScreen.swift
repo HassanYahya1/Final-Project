@@ -21,7 +21,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		image.isUserInteractionEnabled = true
 		image.layer.cornerRadius = 25
 		image.contentMode = .scaleAspectFill
-		image.image = UIImage(named: "mod")
+		image.image = UIImage(named: "looo")
 		
 		return image
 	}()
@@ -41,6 +41,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		firstName.layer.borderWidth = 1
 		firstName.layer.borderColor = UIColor.lightGray.cgColor
 		firstName.placeholder = NSLocalizedString("First Name", comment: "")
+		firstName.textAlignment = .center
 		firstName.backgroundColor =  UIColor(named: "Cell")
 		firstName.textColor =  UIColor(named: "Tint")
 		return firstName
@@ -53,6 +54,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		lastName.layer.borderWidth = 1
 		lastName.layer.borderColor = UIColor.lightGray.cgColor
 		lastName.placeholder = NSLocalizedString("Last Name", comment: "")
+		lastName.textAlignment = .center
 		lastName.backgroundColor =  UIColor(named: "Cell")
 		lastName.textColor =  UIColor(named: "Tint")
 		return lastName
@@ -64,6 +66,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		userEmail.layer.borderWidth = 1
 		userEmail.layer.borderColor = UIColor.lightGray.cgColor
 		userEmail.placeholder = NSLocalizedString("Email Address", comment: "")
+		userEmail.textAlignment = .center
 		userEmail.backgroundColor =   UIColor(named: "Cell")
 		userEmail.textColor =  UIColor(named: "Tint")
 		return userEmail
@@ -77,6 +80,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		userPassword.layer.borderColor = UIColor.lightGray.cgColor
 		userPassword.isSecureTextEntry = true
 		userPassword.placeholder = NSLocalizedString(" Password...", comment: "")
+		userPassword.textAlignment = .center
 		userPassword.backgroundColor =  UIColor(named: "Cell")
 		userPassword.textColor =  UIColor(named: "Tint")
 		return userPassword
@@ -86,9 +90,9 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		let registerButton = UIButton()
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
 		registerButton.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
-		registerButton.setTitleColor(.black, for: .normal)
+		registerButton.setTitleColor(.white, for: .normal)
 		registerButton.backgroundColor =  UIColor(named: "LoginB")
-		registerButton.tintColor =  UIColor(named: "Tint")
+		registerButton.tintColor = UIColor(named: "Tint")
 		registerButton.layer.cornerRadius = 12
 		registerButton.layer.masksToBounds = true
 		registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
@@ -140,8 +144,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		NSLayoutConstraint.activate([
 			profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
 			profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-			profileImage.heightAnchor.constraint(equalToConstant: 300),
-			profileImage.widthAnchor.constraint(equalTo: profileImage.heightAnchor,multiplier: 100/100)
+			profileImage.heightAnchor.constraint(equalToConstant: 400),
+			profileImage.widthAnchor.constraint(equalTo: profileImage.heightAnchor,multiplier: 120/120)
 		])
 		view.addSubview(firstName)
 		NSLayoutConstraint.activate([

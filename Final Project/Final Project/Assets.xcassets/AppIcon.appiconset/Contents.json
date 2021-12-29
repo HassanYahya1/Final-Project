@@ -75,7 +75,6 @@
       "size" : "20x20"
     },
     {
-      "filename" : "Icon-Small-50@2x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
@@ -86,7 +85,6 @@
       "size" : "29x29"
     },
     {
-      "filename" : "Icon-76@3x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
@@ -97,25 +95,21 @@
       "size" : "40x40"
     },
     {
-      "filename" : "Icon-Spotlight-40.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "Icon-Small-50.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "Icon-72@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "Icon-76@2x.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
@@ -124,6 +118,24 @@
       "filename" : "Icon-iPadPro@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "filename" : "Icon-Spotlight-40.png",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "Icon-Small-50.png",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "size" : "50x50"
+    },
+    {
+      "filename" : "Icon-Small-50@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x",
+      "size" : "50x50"
     },
     {
       "filename" : "Icon-60.png",
@@ -138,9 +150,27 @@
       "size" : "72x72"
     },
     {
+      "filename" : "Icon-72@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x",
+      "size" : "72x72"
+    },
+    {
       "filename" : "Icon-76.png",
       "idiom" : "universal",
       "scale" : "1x",
+      "size" : "76x76"
+    },
+    {
+      "filename" : "Icon-76@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x",
+      "size" : "76x76"
+    },
+    {
+      "filename" : "Icon-76@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x",
       "size" : "76x76"
     }
   ],
